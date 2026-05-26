@@ -1,0 +1,52 @@
+{
+  "id": "new-project-slug",
+  "title": "Homepage card title",
+  "detailTitle": "Project detail page title",
+  "label": "Short category label",
+  "theme": "#5787a7",
+  "overview": "Short summary used on both the homepage card and the project detail hero.",
+  "goal": "Homepage educational goal text.",
+  "impact": "Homepage teaching impact text and detail-page reflection text.",
+  "tech": ["Tool or theme 1", "Tool or theme 2", "Tool or theme 3"],
+  "visual": "creative",
+  "url": "./projects/new-project-slug.html",
+  "detailUrl": "../projects/new-project-slug.html",
+  "snapshot": {
+    "label": "Prototype 06",
+    "image": "../Nicholas Portfolio Materials/02_Projects/New Project/photos/cover.png",
+    "imagePosition": "center",
+    "audience": "Who this was for.",
+    "format": "Workshop, course unit, prototype, installation, etc.",
+    "role": "Your role on the project."
+  },
+  "storyTitle": "Project story headline.",
+  "storyIntro": "Optional short intro under the story headline.",
+  "panels": [
+    {
+      "title": "What this was",
+      "body": "Main project description."
+    },
+    {
+      "title": "Learning goals",
+      "items": ["Goal 1", "Goal 2", "Goal 3"]
+    },
+    {
+      "title": "What students made",
+      "body": "Artifacts, outcomes, or visitor actions."
+    }
+  ],
+  "assetPath": "../Nicholas Portfolio Materials/02_Projects/New Project/",
+  "gallery": [
+    {
+      "label": "Gallery label",
+      "src": "../Nicholas Portfolio Materials/02_Projects/New Project/photos/image.png",
+      "alt": "Short image description"
+    },
+    {
+      "label": "Second gallery item"
+    },
+    {
+      "label": "Third gallery item"
+    }
+  ]
+}
