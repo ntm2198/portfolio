@@ -1,106 +1,5 @@
 window.portfolioProjects = [
   {
-    id: "creative-coding-workshop",
-    title: "Dawn's  Fun Time",
-    detailTitle: "Creative Coding Workshop Series",
-    label: "Code + Studio",
-    theme: "#a8d8c2",
-    overview:
-      "A sequence of short studio challenges where students use code to make motion, pattern, interaction, and playable sketches.",
-    goal:
-      "Introduce computational thinking through interactive art and game mechanics without making prior syntax knowledge the price of entry.",
-    impact:
-      "Students leave with a vocabulary for loops, variables, conditionals, and remix culture through personally expressive work.",
-    tech: ["Scratch", "JavaScript", "Canvas"],
-    visual: "creative",
-    url: "./projects/creative-coding-workshop.html",
-    detailUrl: "../projects/creative-coding-workshop.html",
-    snapshot: {
-      label: "Prototype 01",
-      audience: "Editable: lower school, high school, workshop group, or mixed cohort.",
-      format: "Editable: workshop series, unit, camp session, club, or classroom project.",
-      role: "Editable: designer, instructor, facilitator, curriculum author.",
-    },
-    storyTitle: "A flexible template for the final writeup.",
-    storyIntro: "Replace this copy with the real project narrative when you are ready.",
-    panels: [
-      {
-        title: "What this was",
-        body:
-          "Editable: describe the learning context, duration, setting, and why this project mattered. Keep this section focused on the experience a visitor should understand first.",
-      },
-      {
-        title: "Learning goals",
-        items: [
-          "Editable: introduce loops, variables, conditionals, and event-driven thinking.",
-          "Editable: connect computational concepts to creative choice and critique.",
-          "Editable: make room for playful iteration and personal expression.",
-        ],
-      },
-      {
-        title: "What students made",
-        body:
-          "Editable: add examples of sketches, interactive art, mini-games, animations, remixes, or other student artifacts.",
-      },
-    ],
-    assetPath: "../Nicholas Portfolio Materials/02_Projects/Creative Coding Workshop/",
-    gallery: [
-      { label: "Add project image" },
-      { label: "Add student work" },
-      { label: "Add slide or artifact" },
-    ],
-  },
-  {
-    id: "physical-computing",
-    title: "Physical Computing Classroom Prototypes",
-    detailTitle: "Physical Computing Classroom Prototypes",
-    label: "Sensors + Feedback",
-    theme: "#edbd4c",
-    overview:
-      "A collection of microcontroller builds that turn classroom materials into responsive objects, instruments, and collaborative puzzles.",
-    goal: "Help learners connect abstract logic to tangible inputs, outputs, constraints, and debugging habits.",
-    impact:
-      "Students practice iteration in teams as they test circuits, revise code, and explain how their system responds to the world.",
-    tech: ["Arduino", "Micro:Bit", "Hummingbird Robotics"],
-    visual: "physical",
-    url: "./projects/physical-computing.html",
-    detailUrl: "../projects/physical-computing.html",
-    snapshot: {
-      label: "Prototype 02",
-      audience: "Editable: age group, course, camp, or classroom setting.",
-      format: "Editable: build sprint, unit, station rotation, or showcase project.",
-      role: "Editable: instructor, curriculum designer, materials manager, technical coach.",
-    },
-    storyTitle: "A hands-on build narrative ready for your details.",
-    storyIntro: "Swap in specific circuits, prompts, photos, and student outcomes.",
-    panels: [
-      {
-        title: "What this was",
-        body:
-          "Editable: describe the physical computing challenge, the materials available, and how students moved from idea to working prototype.",
-      },
-      {
-        title: "Learning goals",
-        items: [
-          "Editable: connect inputs, outputs, logic, and feedback loops.",
-          "Editable: practice debugging across code, wiring, and physical constraints.",
-          "Editable: document design choices and explain how the system responds.",
-        ],
-      },
-      {
-        title: "What students made",
-        body:
-          "Editable: list responsive sculptures, sensor games, instruments, robotic mechanisms, or classroom inventions.",
-      },
-    ],
-    assetPath: "../Nicholas Portfolio Materials/02_Projects/Physical Computing/",
-    gallery: [
-      { label: "Add build photo" },
-      { label: "Add circuit diagram" },
-      { label: "Add student prototype" },
-    ],
-  },
-  {
     id: "game-based-learning",
     title: "Game-Based Skill Building for Students with ADHD",
     detailTitle: "Game-Based Skill Building for students with ADHD",
@@ -119,7 +18,7 @@ window.portfolioProjects = [
     detailUrl: "../projects/game-based-learning.html",
     snapshot: {
       label: "Road Ready Rally",
-      image: "../Nicholas Portfolio Materials/02_Projects/Game-Based Learning/photos/cover_image.png",
+      image: "./assets/projects/game-based-learning/photos/cover-image.png",
       imagePosition: "top",
       audience: "Graduate level student design team.",
       format: "Research-backed board game prototype.",
@@ -147,73 +46,23 @@ window.portfolioProjects = [
           "In the context of playing games, the learning content is emergent rather than explicit. These games represent a challenge to solve, for which players must implement their cognitive abilities and knowledge that belongs to the curricular content. (Vita-Barrull et al., 2024)",
       },
     ],
-    assetPath: "../Nicholas Portfolio Materials/02_Projects/Game-Based Learning/",
+    assetPath: "./assets/projects/game-based-learning/",
     gallery: [
       {
         label: "Card Design",
-        src: "../Nicholas Portfolio Materials/02_Projects/Game-Based Learning/photos/grab3.png",
+        src: "./assets/projects/game-based-learning/photos/grab3.png",
         alt: "Road Ready Rally card and prototype pieces",
       },
       {
         label: "Add simulation screenshot",
-        src: "../Nicholas Portfolio Materials/02_Projects/Game-Based Learning/photos/grab3.png",
+        src: "./assets/projects/game-based-learning/photos/grab3.png",
         alt: "Road Ready Rally prototype image placeholder",
       },
       {
         label: "Add playtest notes",
-        src: "../Nicholas Portfolio Materials/02_Projects/Game-Based Learning/photos/grab3.png",
+        src: "./assets/projects/game-based-learning/photos/grab3.png",
         alt: "Road Ready Rally playtest notes placeholder",
       },
-    ],
-  },
-  {
-    id: "makerspace-program",
-    title: "STEM Makerspace Program Design",
-    detailTitle: "STEM Makerspace Program Design",
-    label: "Build + Exhibit",
-    theme: "#5787a7",
-    overview:
-      "An open-ended makerspace arc built around engineering prompts, rapid prototyping, critique routines, and student showcases.",
-    goal: "Create a classroom culture where technical skill grows through design choices, shared materials, and reflective revision.",
-    impact:
-      "Students learn to document process, communicate tradeoffs, and turn early rough ideas into teachable artifacts.",
-    tech: ["3D printing", "Figma", "Rapid prototyping"],
-    visual: "maker",
-    url: "./projects/makerspace-program.html",
-    detailUrl: "../projects/makerspace-program.html",
-    snapshot: {
-      label: "Prototype 04",
-      audience: "Editable: school group, makerspace cohort, after-school program, or workshop.",
-      format: "Editable: program arc, design studio, exhibition prep, or engineering challenge.",
-      role: "Editable: program designer, instructor, critique facilitator, showcase planner.",
-    },
-    storyTitle: "A structure for documenting an open-ended design program.",
-    storyIntro: "Use this page to show the studio culture, process, and final student artifacts.",
-    panels: [
-      {
-        title: "What this was",
-        body:
-          "Editable: describe the makerspace context, project prompts, available tools, and how students moved through ideation, prototyping, and revision.",
-      },
-      {
-        title: "Learning goals",
-        items: [
-          "Editable: build technical skill through meaningful design constraints.",
-          "Editable: practice critique, documentation, and iterative improvement.",
-          "Editable: communicate tradeoffs and decisions through public artifacts.",
-        ],
-      },
-      {
-        title: "What students made",
-        body:
-          "Editable: add prototypes, printed objects, exhibits, design boards, reflection journals, or final presentations.",
-      },
-    ],
-    assetPath: "../Nicholas Portfolio Materials/02_Projects/Makerspace Program/",
-    gallery: [
-      { label: "Add process photo" },
-      { label: "Add prototype image" },
-      { label: "Add showcase artifact" },
     ],
   },
   {
@@ -235,7 +84,7 @@ window.portfolioProjects = [
     detailUrl: "../projects/interactive-installation.html",
     snapshot: {
       label: "April 25 Exhibit Pilot",
-      image: "../Nicholas Portfolio Materials/02_Projects/Interactive Installation/photos/cover_image.png",
+      image: "./assets/projects/interactive-installation/photos/cover-image.png",
       imagePosition: "center",
       audience: "Public pilot visitors and NYU learning experience design community.",
       format: "Interactive museum exhibit with digital projection, printed interpretation, videos, and hands-on stations.",
@@ -264,16 +113,16 @@ window.portfolioProjects = [
           "Visitors could virtually try tattoo designs on their skin through a projection mapping setup, practice traditional poking techniques on bananas with bamboo and ink, scan QR-linked videos, read gallery labels, and browse a small library of tattoo culture resources.",
       },
     ],
-    assetPath: "../Nicholas Portfolio Materials/02_Projects/Interactive Installation/",
+    assetPath: "./assets/projects/interactive-installation/",
     gallery: [
       { label: "Opening Learning Content of museum",
-        src: "../Nicholas Portfolio Materials/02_Projects/Interactive Installation/photos/museumOverview.JPEG"
+        src: "./assets/projects/interactive-installation/photos/museum-overview.jpeg"
       },
       { label: "Tradition Meets Technology,",
-        src: "../Nicholas Portfolio Materials/02_Projects/Interactive Installation/photos/learningContent.JPEG"
+        src: "./assets/projects/interactive-installation/photos/learning-content.jpeg"
        },
       { label: "My teammate Celine tries out the projection mapping",
-        src: "../Nicholas Portfolio Materials/02_Projects/Interactive Installation/photos/celineHappy.JPEG"
+        src: "./assets/projects/interactive-installation/photos/celine-happy.jpeg"
        },
     ],
   },
@@ -289,11 +138,10 @@ window.portfolioProjects = [
   "impact": "Cultivated an empathetic and highly engaging studio space for grades 2-7, leveraging hands-on robotics toolchains to democratize access to core computational concepts while establishing strong communicative partnerships with student families.",
   "tech": ["Scratch", "Micro:Bit", "Hummingbird Robotics", "LittleBits", "Google for Education"],
   "visual": "creative",
-  "url": "./projects/creative-coding-workshop.html",
-  "detailUrl": "../projects/creative-coding-workshop.html",
+  "url": "./projects/hannah-senesh-stem.html",
+  "detailUrl": "../projects/hannah-senesh-stem.html",
   "snapshot": {
     "label": "Sept 2025 - Present",
-    "image": "../Nicholas Portfolio Materials/02_Projects/hannah-senesh-stem/photos/cover.png",
     "imagePosition": "center",
     "audience": "Grades 2-7",
     "format": "School-Day Enrichment Curriculum & Studio Space Management",
@@ -319,11 +167,10 @@ window.portfolioProjects = [
       "body": "Interactive animatronic creatures built via Hummingbird components, physical smart-assist devices using integrated Micro:Bit sensors, and rich multi-level narrative animations coded inside Scratch."
     }
   ],
-  "assetPath": "../Nicholas Portfolio Materials/02_Projects/hannah-senesh-stem/",
+  "assetPath": "./assets/projects/hannah-senesh-stem/",
   "gallery": [
     {
       "label": "Physical Computing Rig",
-      "src": "../Nicholas Portfolio Materials/02_Projects/hannah-senesh-stem/photos/microbit-build.png",
       "alt": "A close up look at a student wiring a microcontroler card within the makerspace."
     },
     {
@@ -346,11 +193,10 @@ window.portfolioProjects = [
   "impact": "Successfully balanced demanding technical workflows with acute behavioral and emotional support, ensuring that intense troubleshooting loops became avenues for resilience rather than student frustration.",
   "tech": ["LEGO Mindstorms", "3D Printing", "Digital Design", "Rapid Prototyping"],
   "visual": "maker",
-  "url": "./projects/makerspace-program.html",
-  "detailUrl": "../projects/makerspace-program.html",
+  "url": "./projects/lavner-robotics-3dprinting.html",
+  "detailUrl": "../projects/lavner-robotics-3dprinting.html",
   "snapshot": {
     "label": "Summer 2025",
-    "image": "../Nicholas Portfolio Materials/02_Projects/lavner-robotics-3dprinting/photos/cover.png",
     "imagePosition": "center",
     "audience": "Ages 7-12",
     "format": "Intensive Week-Long Project-Based Programs",
@@ -376,11 +222,10 @@ window.portfolioProjects = [
       "body": "Custom-sliced mechanical toys, functional 3D printed objects, and fully autonomous robotic platforms capable of self-correcting through labyrinthine navigation maps."
     }
   ],
-  "assetPath": "../Nicholas Portfolio Materials/02_Projects/lavner-robotics-3dprinting/",
+  "assetPath": "./assets/projects/lavner-robotics-3dprinting/",
   "gallery": [
     {
       "label": "3D Printer Calibration Lab",
-      "src": "../Nicholas Portfolio Materials/02_Projects/lavner-robotics-3dprinting/photos/print-bed.png",
       "alt": "A close up photo of a student leveling a 3D printing setup."
     },
     {
@@ -403,11 +248,10 @@ window.portfolioProjects = [
   "impact": "Transformed novice participants into capable, self-directed developers who successfully launched integrated electronic systems and formally published their engineering design logs online.",
   "tech": ["Python", "JavaScript", "Arduino", "Raspberry Pi", "Circuit Assembly"],
   "visual": "physical",
-  "url": "./projects/physical-computing.html",
-  "detailUrl": "../projects/physical-computing.html",
+  "url": "./projects/bluestamp-engineering-instruction.html",
+  "detailUrl": "../projects/bluestamp-engineering-instruction.html",
   "snapshot": {
     "label": "Summers 2018 & 2023",
-    "image": "../Nicholas Portfolio Materials/02_Projects/bluestamp-engineering-instruction/photos/cover.png",
     "imagePosition": "center",
     "audience": "High School Students",
     "format": "7-Week Intensive Engineering Residency",
@@ -433,11 +277,10 @@ window.portfolioProjects = [
       "body": "Sensor-integrated IoT apparatuses, web-connected microcontroller systems, and public portfolio pages featuring formal build logs, wiring diagrams, and functional hardware diagnostic videos."
     }
   ],
-  "assetPath": "../Nicholas Portfolio Materials/02_Projects/bluestamp-engineering-instruction/",
+  "assetPath": "./assets/projects/bluestamp-engineering-instruction/",
   "gallery": [
     {
       "label": "Arduino Microcontroller Mapping",
-      "src": "../Nicholas Portfolio Materials/02_Projects/bluestamp-engineering-instruction/photos/circuit.png",
       "alt": "A detailed layout of a custom-built sensor system tied to an Arduino board."
     },
     {

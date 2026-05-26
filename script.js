@@ -11,7 +11,7 @@ const projectSource = window.portfolioProjects ?? [
     impact:
       "Students leave with a vocabulary for loops, variables, conditionals, and remix culture through personally expressive work.",
     visual: "creative",
-    url: "./projects/creative-coding-workshop.html",
+    url: "./projects/hannah-senesh-stem.html",
   },
   {
     title: "Physical Computing Classroom Prototypes",
@@ -25,7 +25,7 @@ const projectSource = window.portfolioProjects ?? [
     impact:
       "Students practice iteration in teams as they test circuits, revise code, and explain how their system responds to the world.",
     visual: "physical",
-    url: "./projects/physical-computing.html",
+    url: "./projects/bluestamp-engineering-instruction.html",
   },
   {
     title: "Game-Based Probability & Decision Systems",
@@ -53,7 +53,7 @@ const projectSource = window.portfolioProjects ?? [
     impact:
       "Students learn to document process, communicate tradeoffs, and turn early rough ideas into teachable artifacts.",
     visual: "maker",
-    url: "./projects/makerspace-program.html",
+    url: "./projects/lavner-robotics-3dprinting.html",
   },
   {
     title: "Interactive Learning Installation",
@@ -161,57 +161,57 @@ const approach = [
 const workplaces = [
   {
     name: "Cornell CIS",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/cornellCIS_loho.png",
+    logo: "./assets/logos-or-icons/workplaces/cornell-cis-loho.png",
     note: "Undergraduate study in information science, systems thinking, and human-centered technology.",
   },
   {
     name: "NYU Steinhardt",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/steinhardt_logo.png",
+    logo: "./assets/logos-or-icons/workplaces/steinhardt-logo.png",
     note: "Graduate work in learning technology, experience design, and educational practice.",
   },
   {
     name: "Accenture",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/Accenture_logo.png",
+    logo: "./assets/logos-or-icons/workplaces/accenture-logo.png",
     note: "Technology consulting experience across systems, documentation, and design collaboration.",
   },
   {
     name: "BlueStamp Engineering",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/BlueStamp-Logo 1.png",
+    logo: "./assets/logos-or-icons/workplaces/blue-stamp-logo-1.png",
     note: "Hands-on engineering instruction built around prototypes, iteration, and student agency.",
   },
   {
     name: "Lavner Education",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/Lavner_TechRev_Logo.webp",
+    logo: "./assets/logos-or-icons/workplaces/lavner-tech-rev-logo.webp",
     note: "Coding and creative technology instruction for young makers exploring digital tools.",
   },
   {
     name: "Coco Academy",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/coco_academy_logo.webp",
+    logo: "./assets/logos-or-icons/workplaces/coco-academy-logo.webp",
     note: "Student-centered technology learning with an emphasis on confidence and playful practice.",
   },
   {
     name: "Free Library of Philadelphia",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/FLP_logo.png",
+    logo: "./assets/logos-or-icons/workplaces/flp-logo.png",
     note: "Youth learning programs connecting mentoring, STEM exploration, and community support.",
   },
   {
     name: "LEAP",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/FLP_LEAP.png",
+    logo: "./assets/logos-or-icons/workplaces/flp-leap.png",
     note: "Educational programming shaped around access, enrichment, and meaningful student projects.",
   },
   {
     name: "Hannah Senesh",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/hannah_senesh_branding 1.png",
+    logo: "./assets/logos-or-icons/workplaces/hannah-senesh-branding-1.png",
     note: "Classroom experience supporting curious learners through technology-rich instruction.",
   },
   {
     name: "Camp W*K",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/campWK.png",
+    logo: "./assets/logos-or-icons/workplaces/camp-wk.png",
     note: "Informal learning spaces where creative projects and technical exploration can meet.",
   },
   {
     name: "LTXD",
-    logo: "./Nicholas Portfolio Materials/04_Assets_For_Website/logos-or-icons/Workplaces/LTXD_logo.png",
+    logo: "./assets/logos-or-icons/workplaces/ltxd-logo.png",
     note: "My Masters program, focused on learning technology and experience design for usable, thoughtful, pedagogically backed learning systems.",
   },
 ];

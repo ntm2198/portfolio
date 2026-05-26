@@ -14,6 +14,11 @@
     if (node && value) node.innerHTML = value;
   };
 
+  const resolveAssetPath = (value) => {
+    if (!value?.startsWith("./assets/")) return value;
+    return window.location.pathname.includes("/projects/") ? value.replace("./", "../") : value;
+  };
+
   document.title = `${project.detailTitle || project.title} | Nicholas Markus`;
   const hero = document.querySelector(".project-detail-hero");
   if (hero) hero.style.setProperty("--detail-theme", project.theme);
@@ -33,12 +38,12 @@
     if (project.snapshot.image) {
       const snapshotImage = new Image();
       snapshotImage.addEventListener("load", () => {
-        snapshotVisual.style.backgroundImage = `url("${project.snapshot.image}")`;
+        snapshotVisual.style.backgroundImage = `url("${resolveAssetPath(project.snapshot.image)}")`;
         snapshotVisual.style.backgroundPosition = project.snapshot.imagePosition || "center";
         snapshotVisual.style.backgroundSize = "cover";
         snapshotVisual.classList.add("has-image");
       });
-      snapshotImage.src = project.snapshot.image;
+      snapshotImage.src = resolveAssetPath(project.snapshot.image);
     }
   }
 
@@ -71,8 +76,10 @@
   const gallery = document.querySelector(".project-gallery");
   if (gallery && project.gallery) {
     gallery.innerHTML = project.gallery
-        .map((item) => {
-        const image = item.src ? `<img src="${item.src}" alt="${item.alt || item.label}" onerror="this.remove()" />` : "";
+      .map((item) => {
+        const image = item.src
+          ? `<img src="${resolveAssetPath(item.src)}" alt="${item.alt || item.label}" onerror="this.remove()" />`
+          : "";
         return `<div class="gallery-slot">${image}<span>${item.label}</span></div>`;
       })
       .join("");
