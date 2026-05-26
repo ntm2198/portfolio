@@ -13,7 +13,7 @@
   "detailUrl": "../projects/new-project-slug.html",
   "snapshot": {
     "label": "Prototype 06",
-    "image": "../Nicholas Portfolio Materials/02_Projects/New Project/photos/cover.png",
+    "image": "./assets/projects/new-project-slug/photos/cover.png",
     "imagePosition": "center",
     "audience": "Who this was for.",
     "format": "Workshop, course unit, prototype, installation, etc.",
@@ -35,11 +35,11 @@
       "body": "Artifacts, outcomes, or visitor actions."
     }
   ],
-  "assetPath": "../Nicholas Portfolio Materials/02_Projects/New Project/",
+  "assetPath": "./assets/projects/new-project-slug/",
   "gallery": [
     {
       "label": "Gallery label",
-      "src": "../Nicholas Portfolio Materials/02_Projects/New Project/photos/image.png",
+      "src": "./assets/projects/new-project-slug/photos/image.png",
       "alt": "Short image description"
     },
     {
