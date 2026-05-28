@@ -143,6 +143,7 @@ window.portfolioProjects = [
     url: "./projects/hannah-senesh-stem.html",
     snapshot: {
       label: "Sept 2025 - Present",
+      image: "./assets/projects/hannah-senesh-stem/photos/cover.jpg",
       imagePosition: "center",
       audience: "Grades 2-7",
       format: "School-Day Enrichment Curriculum & Studio Space Management",
@@ -173,14 +174,19 @@ window.portfolioProjects = [
     ],
     gallery: [
       {
-        label: "Physical Computing Rig",
-        alt: "A close up look at a student wiring a microcontroler card within the makerspace.",
+        label: "Creativity Meets Technology",
+        src: "./assets/projects/hannah-senesh-stem/photos/kitty.jpg",
+        alt: "A student's hands wire LittleBits components onto a hand-painted orange cardboard cat on a makerspace workbench",
       },
       {
         label: "Scratch Logic Walkthrough",
+        src: "./assets/projects/hannah-senesh-stem/photos/coding.jpg",
+        alt: "A student codes a LittleBits robot in Scratch on a laptop, with the physical robot prototype beside the keyboard",
       },
       {
         label: "Makerspace Studio Dynamic",
+        src: "./assets/projects/hannah-senesh-stem/photos/jedi.jpg",
+        alt: "A cardboard humanoid figure connected to a chain of glowing green LittleBits LEDs and a battery on a corkboard table",
       },
     ],
   },
