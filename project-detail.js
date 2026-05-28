@@ -71,7 +71,6 @@
   });
 
   setText(".reflection-card p", project.impact);
-  setText(".asset-drop code", project.assetPath);
 
   const gallery = document.querySelector(".project-gallery");
   if (gallery && project.gallery) {

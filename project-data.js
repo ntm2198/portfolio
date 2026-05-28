@@ -15,7 +15,6 @@ window.portfolioProjects = [
     tech: ["Game Design", "ADHD Friendly Learning", "Playful Learning", "3D Printing & Rapid Prototyping"],
     visual: "game",
     url: "./projects/game-based-learning.html",
-    detailUrl: "../projects/game-based-learning.html",
     snapshot: {
       label: "Road Ready Rally",
       image: "./assets/projects/game-based-learning/photos/cover-image.png",
@@ -46,7 +45,6 @@ window.portfolioProjects = [
           "In the context of playing games, the learning content is emergent rather than explicit. These games represent a challenge to solve, for which players must implement their cognitive abilities and knowledge that belongs to the curricular content. (Vita-Barrull et al., 2024)",
       },
     ],
-    assetPath: "./assets/projects/game-based-learning/",
     gallery: [
       {
         label: "Card Design",
@@ -81,7 +79,6 @@ window.portfolioProjects = [
     tech: ["TouchDesigner", "Blender", "Projection Mapping", "User Research", "Interpretive Media"],
     visual: "installation",
     url: "./projects/interactive-installation.html",
-    detailUrl: "../projects/interactive-installation.html",
     snapshot: {
       label: "April 25 Exhibit Pilot",
       image: "./assets/projects/interactive-installation/photos/cover-image.png",
@@ -113,182 +110,196 @@ window.portfolioProjects = [
           "Visitors could virtually try tattoo designs on their skin through a projection mapping setup, practice traditional poking techniques on bananas with bamboo and ink, scan QR-linked videos, read gallery labels, and browse a small library of tattoo culture resources.",
       },
     ],
-    assetPath: "./assets/projects/interactive-installation/",
     gallery: [
-      { label: "Opening Learning Content of museum",
-        src: "./assets/projects/interactive-installation/photos/museum-overview.jpeg"
+      {
+        label: "Opening Learning Content of museum",
+        src: "./assets/projects/interactive-installation/photos/museum-overview.jpeg",
       },
-      { label: "Tradition Meets Technology,",
-        src: "./assets/projects/interactive-installation/photos/learning-content.jpeg"
-       },
-      { label: "My teammate Celine tries out the projection mapping",
-        src: "./assets/projects/interactive-installation/photos/celine-happy.jpeg"
-       },
+      {
+        label: "Tradition Meets Technology",
+        src: "./assets/projects/interactive-installation/photos/learning-content.jpeg",
+      },
+      {
+        label: "My teammate Celine tries out the projection mapping",
+        src: "./assets/projects/interactive-installation/photos/celine-happy.jpeg",
+      },
     ],
   },
   {
-  "id": "hannah-senesh-stem",
-  "title": "Makerspace Integration & K-7 Robotics",
-  "category": "Career",
-  "detailTitle": "Fostering Inclusive Computational Thinking at Hannah Senesh",
-  "label": "K-7 STEM Curriculum & Makerspace",
-  "theme": "#4A90E2",
-  "overview": "Designing and facilitating an active, multi-grade STEM enrichment program that brings digital citizenship, coding fundamentals, and physical computing to life within an inclusive school makerspace.",
-  "goal": "Empower younger learners to transition from passive consumers of media to active producers of technology through tangible programming blocks and collaborative engineering design loops.",
-  "impact": "Cultivated an empathetic and highly engaging studio space for grades 2-7, leveraging hands-on robotics toolchains to democratize access to core computational concepts while establishing strong communicative partnerships with student families.",
-  "tech": ["Scratch", "Micro:Bit", "Hummingbird Robotics", "LittleBits", "Google for Education"],
-  "visual": "creative",
-  "url": "./projects/hannah-senesh-stem.html",
-  "detailUrl": "../projects/hannah-senesh-stem.html",
-  "snapshot": {
-    "label": "Sept 2025 - Present",
-    "imagePosition": "center",
-    "audience": "Grades 2-7",
-    "format": "School-Day Enrichment Curriculum & Studio Space Management",
-    "role": "STEM Education Specialist"
-  },
-  "storyTitle": "Building a Culture of Creative Coding and Physical Computing",
-  "storyIntro": "How intentional hardware integration turns abstract software syntax into meaningful, tangible student expressions.",
-  "panels": [
-    {
-      "title": "What this was",
-      "body": "A comprehensive school-day STEM curriculum framework explicitly mapped out for a wide array of developmental bands (ages 7–13). By scaffolding digital design workflows alongside physical electronics prototyping tools, this environment turns standard lessons into collaborative maker sessions where student autonomy is balanced with core mathematical and logical instruction."
+    id: "hannah-senesh-stem",
+    title: "Makerspace Integration & K-7 Robotics",
+    category: "Career",
+    detailTitle: "Fostering Inclusive Computational Thinking at Hannah Senesh",
+    label: "K-7 STEM Curriculum & Makerspace",
+    theme: "#4A90E2",
+    overview:
+      "Designing and facilitating an active, multi-grade STEM enrichment program that brings digital citizenship, coding fundamentals, and physical computing to life within an inclusive school makerspace.",
+    goal:
+      "Empower younger learners to transition from passive consumers of media to active producers of technology through tangible programming blocks and collaborative engineering design loops.",
+    impact:
+      "Cultivated an empathetic and highly engaging studio space for grades 2-7, leveraging hands-on robotics toolchains to democratize access to core computational concepts while establishing strong communicative partnerships with student families.",
+    tech: ["Scratch", "Micro:Bit", "Hummingbird Robotics", "LittleBits", "Google for Education"],
+    visual: "creative",
+    url: "./projects/hannah-senesh-stem.html",
+    snapshot: {
+      label: "Sept 2025 - Present",
+      imagePosition: "center",
+      audience: "Grades 2-7",
+      format: "School-Day Enrichment Curriculum & Studio Space Management",
+      role: "STEM Education Specialist",
     },
-    {
-      "title": "Learning goals",
-      "items": [
-        "Master foundational coding logic—including conditionals, loops, variables, and events—across software and hardware environments.",
-        "Apply iterative engineering design principles to safely construct, wire, and modify physical robotics modules.",
-        "Understand and actively practice digital citizenship protocols while collaboratively sharing a high-resource makerspace ecosystem."
-      ]
-    },
-    {
-      "title": "What students made",
-      "body": "Interactive animatronic creatures built via Hummingbird components, physical smart-assist devices using integrated Micro:Bit sensors, and rich multi-level narrative animations coded inside Scratch."
-    }
-  ],
-  "assetPath": "./assets/projects/hannah-senesh-stem/",
-  "gallery": [
-    {
-      "label": "Physical Computing Rig",
-      "alt": "A close up look at a student wiring a microcontroler card within the makerspace."
-    },
-    {
-      "label": "Scratch Logic Walkthrough"
-    },
-    {
-      "label": "Makerspace Studio Dynamic"
-    }
-  ]
-  },
-  {
-  "id": "lavner-robotics-3dprinting",
-  "title": "Project-Based Robotics & 3D Printing Summer Program",
-  "detailTitle": "Accelerated Tech Literacy: Rapid Prototyping for Young Makers",
-  "label": "Summer STEM Studio",
-  "category": "Career",
-  "theme": "#E65100",
-  "overview": "Leading fast-paced, immersive summer technical programs that blended spatial computer modeling, hardware diagnostics, and autonomous robotic assembly.",
-  "goal": "Demystify complex digital fabrication tools and autonomous robotics systems for young learners by grounding high-level spatial theory inside structured, playful project challenges.",
-  "impact": "Successfully balanced demanding technical workflows with acute behavioral and emotional support, ensuring that intense troubleshooting loops became avenues for resilience rather than student frustration.",
-  "tech": ["LEGO Mindstorms", "3D Printing", "Digital Design", "Rapid Prototyping"],
-  "visual": "maker",
-  "url": "./projects/lavner-robotics-3dprinting.html",
-  "detailUrl": "../projects/lavner-robotics-3dprinting.html",
-  "snapshot": {
-    "label": "Summer 2025",
-    "imagePosition": "center",
-    "audience": "Ages 7-12",
-    "format": "Intensive Week-Long Project-Based Programs",
-    "role": "Summer Instructor"
-  },
-  "storyTitle": "From Digital Pixels to Physical Plastic: Demystifying Automation",
-  "storyIntro": "Bridging software modeling with real-world computer-aided manufacturing parameters for elementary and middle schoolers.",
-  "panels": [
-    {
-      "title": "What this was",
-      "body": "A high-momentum educational accelerator consisting of nine unique weekly modules. The curriculum challenge lay in translating industrial creative tools—such as slicing software parameters for additive manufacturing and mechanical gear-ratio logic—into clear, age-appropriate conceptual milestones."
-    },
-    {
-      "title": "Learning goals",
-      "items": [
-        "Independently diagnose, maintain, and troubleshoot mechanical calibration and software failures on active 3D printers.",
-        "Program LEGO Mindstorms logic to utilize sensor feedback loops for real-world automated task completion.",
-        "Convert original 3D ideas into printable, watertight structural files by mastering spatial constraints."
-      ]
-    },
-    {
-      "title": "What students made",
-      "body": "Custom-sliced mechanical toys, functional 3D printed objects, and fully autonomous robotic platforms capable of self-correcting through labyrinthine navigation maps."
-    }
-  ],
-  "assetPath": "./assets/projects/lavner-robotics-3dprinting/",
-  "gallery": [
-    {
-      "label": "3D Printer Calibration Lab",
-      "alt": "A close up photo of a student leveling a 3D printing setup."
-    },
-    {
-      "label": "LEGO Mindstorms Sensor Arrays"
-    },
-    {
-      "label": "Rapid Prototyping Final Showcase"
-    }
-  ]
+    storyTitle: "Building a Culture of Creative Coding and Physical Computing",
+    storyIntro:
+      "How intentional hardware integration turns abstract software syntax into meaningful, tangible student expressions.",
+    panels: [
+      {
+        title: "What this was",
+        body:
+          "A comprehensive school-day STEM curriculum framework explicitly mapped out for a wide array of developmental bands (ages 7–13). By scaffolding digital design workflows alongside physical electronics prototyping tools, this environment turns standard lessons into collaborative maker sessions where student autonomy is balanced with core mathematical and logical instruction.",
+      },
+      {
+        title: "Learning goals",
+        items: [
+          "Master foundational coding logic—including conditionals, loops, variables, and events—across software and hardware environments.",
+          "Apply iterative engineering design principles to safely construct, wire, and modify physical robotics modules.",
+          "Understand and actively practice digital citizenship protocols while collaboratively sharing a high-resource makerspace ecosystem.",
+        ],
+      },
+      {
+        title: "What students made",
+        body:
+          "Interactive animatronic creatures built via Hummingbird components, physical smart-assist devices using integrated Micro:Bit sensors, and rich multi-level narrative animations coded inside Scratch.",
+      },
+    ],
+    gallery: [
+      {
+        label: "Physical Computing Rig",
+        alt: "A close up look at a student wiring a microcontroler card within the makerspace.",
+      },
+      {
+        label: "Scratch Logic Walkthrough",
+      },
+      {
+        label: "Makerspace Studio Dynamic",
+      },
+    ],
   },
   {
-  "id": "bluestamp-engineering-instruction",
-  "title": "High School Embedded Systems Incubator",
-  "detailTitle": "Microcontroller Architecture: Hard-Coded Systems Instruction",
-  "label": "Advanced STEM Instruction",
-  "category": "Career",
-  "theme": "#1565C0",
-  "overview": "Guiding high school students through a rigorous, professional-grade physical engineering pipeline centered on open-source microcomputers, circuit mapping, and full-stack technical logs.",
-  "goal": "Transition secondary students away from sandboxed software platforms and into raw hardware design and low-level source-code development.",
-  "impact": "Transformed novice participants into capable, self-directed developers who successfully launched integrated electronic systems and formally published their engineering design logs online.",
-  "tech": ["Python", "JavaScript", "Arduino", "Raspberry Pi", "Circuit Assembly"],
-  "visual": "physical",
-  "url": "./projects/bluestamp-engineering-instruction.html",
-  "detailUrl": "../projects/bluestamp-engineering-instruction.html",
-  "snapshot": {
-    "label": "Summers 2018 & 2023",
-    "imagePosition": "center",
-    "audience": "High School Students",
-    "format": "7-Week Intensive Engineering Residency",
-    "role": "Summer Instructor"
+    id: "lavner-robotics-3dprinting",
+    title: "Project-Based Robotics & 3D Printing Summer Program",
+    detailTitle: "Accelerated Tech Literacy: Rapid Prototyping for Young Makers",
+    label: "Summer STEM Studio",
+    category: "Career",
+    theme: "#E65100",
+    overview:
+      "Leading fast-paced, immersive summer technical programs that blended spatial computer modeling, hardware diagnostics, and autonomous robotic assembly.",
+    goal:
+      "Demystify complex digital fabrication tools and autonomous robotics systems for young learners by grounding high-level spatial theory inside structured, playful project challenges.",
+    impact:
+      "Successfully balanced demanding technical workflows with acute behavioral and emotional support, ensuring that intense troubleshooting loops became avenues for resilience rather than student frustration.",
+    tech: ["LEGO Mindstorms", "3D Printing", "Digital Design", "Rapid Prototyping"],
+    visual: "maker",
+    url: "./projects/lavner-robotics-3dprinting.html",
+    snapshot: {
+      label: "Summer 2025",
+      imagePosition: "center",
+      audience: "Ages 7-12",
+      format: "Intensive Week-Long Project-Based Programs",
+      role: "Summer Instructor",
+    },
+    storyTitle: "From Digital Pixels to Physical Plastic: Demystifying Automation",
+    storyIntro:
+      "Bridging software modeling with real-world computer-aided manufacturing parameters for elementary and middle schoolers.",
+    panels: [
+      {
+        title: "What this was",
+        body:
+          "A high-momentum educational accelerator consisting of nine unique weekly modules. The curriculum challenge lay in translating industrial creative tools—such as slicing software parameters for additive manufacturing and mechanical gear-ratio logic—into clear, age-appropriate conceptual milestones.",
+      },
+      {
+        title: "Learning goals",
+        items: [
+          "Independently diagnose, maintain, and troubleshoot mechanical calibration and software failures on active 3D printers.",
+          "Program LEGO Mindstorms logic to utilize sensor feedback loops for real-world automated task completion.",
+          "Convert original 3D ideas into printable, watertight structural files by mastering spatial constraints.",
+        ],
+      },
+      {
+        title: "What students made",
+        body:
+          "Custom-sliced mechanical toys, functional 3D printed objects, and fully autonomous robotic platforms capable of self-correcting through labyrinthine navigation maps.",
+      },
+    ],
+    gallery: [
+      {
+        label: "3D Printer Calibration Lab",
+        alt: "A close up photo of a student leveling a 3D printing setup.",
+      },
+      {
+        label: "LEGO Mindstorms Sensor Arrays",
+      },
+      {
+        label: "Rapid Prototyping Final Showcase",
+      },
+    ],
   },
-  "storyTitle": "Fostering Engineering Autonomy Through Low-Level Computing",
-  "storyIntro": "Cultivating technical communication skills alongside advanced microcomputing and hardware assembly pipelines.",
-  "panels": [
-    {
-      "title": "What this was",
-      "body": "An engineering residency modeling industry R&D cycles. High school students designed independent electronic prototypes from scratch, mastering everything from raw electrical schematic interpretation to embedded systems coding and manual component wiring."
+  {
+    id: "bluestamp-engineering-instruction",
+    title: "High School Embedded Systems Incubator",
+    detailTitle: "Microcontroller Architecture: Hard-Coded Systems Instruction",
+    label: "Advanced STEM Instruction",
+    category: "Career",
+    theme: "#1565C0",
+    overview:
+      "Guiding high school students through a rigorous, professional-grade physical engineering pipeline centered on open-source microcomputers, circuit mapping, and full-stack technical logs.",
+    goal:
+      "Transition secondary students away from sandboxed software platforms and into raw hardware design and low-level source-code development.",
+    impact:
+      "Transformed novice participants into capable, self-directed developers who successfully launched integrated electronic systems and formally published their engineering design logs online.",
+    tech: ["Python", "JavaScript", "Arduino", "Raspberry Pi", "Circuit Assembly"],
+    visual: "physical",
+    url: "./projects/bluestamp-engineering-instruction.html",
+    snapshot: {
+      label: "Summers 2018 & 2023",
+      imagePosition: "center",
+      audience: "High School Students",
+      format: "7-Week Intensive Engineering Residency",
+      role: "Summer Instructor",
     },
-    {
-      "title": "Learning goals",
-      "items": [
-        "Write custom embedded programs in Python and script-based frameworks to drive microchip I/O operations.",
-        "Read and implement hardware wiring layouts to form complex electrical networks safely.",
-        "Synthesize and update detailed public engineering portfolios to explain complex diagnostic histories."
-      ]
-    },
-    {
-      "title": "What students made",
-      "body": "Sensor-integrated IoT apparatuses, web-connected microcontroller systems, and public portfolio pages featuring formal build logs, wiring diagrams, and functional hardware diagnostic videos."
-    }
-  ],
-  "assetPath": "./assets/projects/bluestamp-engineering-instruction/",
-  "gallery": [
-    {
-      "label": "Arduino Microcontroller Mapping",
-      "alt": "A detailed layout of a custom-built sensor system tied to an Arduino board."
-    },
-    {
-      "label": "Raspberry Pi Server Build"
-    },
-    {
-      "label": "Student Portfolio Documentation Layout"
-    }
-  ]
-  }
+    storyTitle: "Fostering Engineering Autonomy Through Low-Level Computing",
+    storyIntro:
+      "Cultivating technical communication skills alongside advanced microcomputing and hardware assembly pipelines.",
+    panels: [
+      {
+        title: "What this was",
+        body:
+          "An engineering residency modeling industry R&D cycles. High school students designed independent electronic prototypes from scratch, mastering everything from raw electrical schematic interpretation to embedded systems coding and manual component wiring.",
+      },
+      {
+        title: "Learning goals",
+        items: [
+          "Write custom embedded programs in Python and script-based frameworks to drive microchip I/O operations.",
+          "Read and implement hardware wiring layouts to form complex electrical networks safely.",
+          "Synthesize and update detailed public engineering portfolios to explain complex diagnostic histories.",
+        ],
+      },
+      {
+        title: "What students made",
+        body:
+          "Sensor-integrated IoT apparatuses, web-connected microcontroller systems, and public portfolio pages featuring formal build logs, wiring diagrams, and functional hardware diagnostic videos.",
+      },
+    ],
+    gallery: [
+      {
+        label: "Arduino Microcontroller Mapping",
+        alt: "A detailed layout of a custom-built sensor system tied to an Arduino board.",
+      },
+      {
+        label: "Raspberry Pi Server Build",
+      },
+      {
+        label: "Student Portfolio Documentation Layout",
+      },
+    ],
+  },
 ];
