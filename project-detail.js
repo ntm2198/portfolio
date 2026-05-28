@@ -1,3 +1,5 @@
+// Reads project data from window.portfolioProjects (set by project-data.js) and populates
+// the detail page whose <body data-project-id="..."> matches the project's id field.
 (function () {
   const projectId = document.body.dataset.projectId;
   const projects = window.portfolioProjects || [];
@@ -14,11 +16,14 @@
     if (node && value) node.innerHTML = value;
   };
 
+  // Asset paths in project-data.js are written root-relative (./assets/...).
+  // From inside /projects/, they need one extra level up (../assets/...).
   const resolveAssetPath = (value) => {
     if (!value?.startsWith("./assets/")) return value;
     return window.location.pathname.includes("/projects/") ? value.replace("./", "../") : value;
   };
 
+  // --- Hero ---
   document.title = `${project.detailTitle || project.title} | Nicholas Markus`;
   const hero = document.querySelector(".project-detail-hero");
   if (hero) hero.style.setProperty("--detail-theme", project.theme);
@@ -32,6 +37,7 @@
     tags.innerHTML = project.tech.map((item) => `<span>${item}</span>`).join("");
   }
 
+  // --- Sidebar snapshot ---
   const snapshotVisual = document.querySelector(".snapshot-visual");
   if (snapshotVisual && project.snapshot) {
     snapshotVisual.querySelector("span").textContent = project.snapshot.label || project.label;
@@ -54,9 +60,11 @@
     snapshotValues[2].textContent = project.snapshot.role || "";
   }
 
+  // --- Story section ---
   setText("#project-story-title", project.storyTitle);
   setText(".section-heading.wide p:not(.eyebrow)", project.storyIntro);
 
+  // --- Content panels (up to 3; each uses either body text or an items list) ---
   const panels = document.querySelectorAll(".detail-main .detail-panel");
   project.panels?.forEach((panel, index) => {
     const node = panels[index];
@@ -70,6 +78,7 @@
     }
   });
 
+  // --- Reflection and gallery ---
   setText(".reflection-card p", project.impact);
 
   const gallery = document.querySelector(".project-gallery");

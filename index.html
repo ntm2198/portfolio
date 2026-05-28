@@ -97,6 +97,7 @@
               learners to surprise themselves.
             </p>
           </div>
+          <!-- Populated by script.js from project-data.js — edit projects there, not here -->
           <div class="project-grid" id="projectGrid"></div>
         </section>
 
@@ -105,6 +106,7 @@
             <p class="eyebrow">Experience</p>
             <h2 id="experience-title">Instructional practice shaped by classrooms, studios, and systems work.</h2>
           </div>
+          <!-- Populated by script.js from the experiences array -->
           <div class="timeline" id="experienceTimeline"></div>
         </section>
 
@@ -113,6 +115,7 @@
             <p class="eyebrow">Skills</p>
             <h2 id="skills-title">Tools for building, teaching, and making ideas testable.</h2>
           </div>
+          <!-- Populated by script.js from the skillClusters array -->
           <div class="skills-grid" id="skillsGrid"></div>
         </section>
 
@@ -125,6 +128,7 @@
             </p>
           </div>
           <div class="workplace-marquee" aria-label="Schools and workplaces">
+            <!-- Populated by script.js from the workplaces array; items are duplicated for the infinite CSS marquee -->
             <div class="workplace-track" id="workplaceTrack"></div>
           </div>
         </section>
@@ -134,6 +138,7 @@
             <p class="eyebrow">Teaching Approach</p>
             <h2 id="approach-title">A learning lab for technical rigor and creative confidence.</h2>
           </div>
+          <!-- Populated by script.js from the approach array -->
           <div class="approach-map" id="approachMap"></div>
         </section>
 
@@ -152,6 +157,8 @@
       </main>
     </div>
 
+    <!-- project-data.js must load first — it sets window.portfolioProjects before script.js reads it -->
+    <!-- ?v= query strings are cache-busting parameters; update them after any deployment -->
     <script src="./project-data.js?v=20260526-career-slugs"></script>
     <script src="./script.js?v=20260526-career-slugs"></script>
   </body>

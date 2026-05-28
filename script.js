@@ -1,5 +1,9 @@
+// ─── Data ────────────────────────────────────────────────────────────────────
+// Project cards read from project-data.js (loaded before this file in index.html).
+// Edit project content there — changes here won't affect the detail pages.
 const projectSource = window.portfolioProjects ?? [];
 
+// Controls which projects appear on the homepage and their display order.
 const featuredProjectIds = [
   "hannah-senesh-stem",
   "bluestamp-engineering-instruction",
@@ -10,6 +14,8 @@ const featuredProjectIds = [
 
 const projects = featuredProjectIds.map((id) => projectSource.find((project) => project.id === id)).filter(Boolean);
 
+// Static content for the Experience, Skills, Approach, and Workplaces sections.
+// Edit these arrays directly to update those sections.
 const experiences = [
   {
     role: "STEM Education Specialist",
@@ -145,6 +151,7 @@ const workplaces = [
   },
 ];
 
+// ─── Render ───────────────────────────────────────────────────────────────────
 const projectGrid = document.querySelector("#projectGrid");
 const timeline = document.querySelector("#experienceTimeline");
 const skillsGrid = document.querySelector("#skillsGrid");
@@ -225,6 +232,7 @@ skillsGrid.innerHTML = skillClusters
   )
   .join("");
 
+// Items are doubled so the CSS marquee animation can loop seamlessly.
 const workplaceItems = [...workplaces, ...workplaces];
 workplaceTrack.innerHTML = workplaceItems
   .map(
@@ -251,6 +259,10 @@ approachMap.innerHTML = approach
   )
   .join("");
 
+// ─── Canvas animations ────────────────────────────────────────────────────────
+// Each project card has a <canvas data-visual="..."> whose animation type is set
+// by the project's visual field. drawProjectCanvas dispatches to the right function.
+// Valid visual values: creative | physical | game | maker | installation
 function fitCanvas(canvas) {
   const rect = canvas.getBoundingClientRect();
   const ratio = window.devicePixelRatio || 1;
@@ -276,6 +288,7 @@ function drawProjectCanvas(canvas, time = 0, hover = false) {
   if (type === "installation") drawInstallation(ctx, width, height, theme, time, hover);
 }
 
+// LittleBits circuit chain with animated Micro:Bit LED grid.
 function drawCreative(ctx, width, height, theme, time, hover) {
   const pulse = (Math.sin(time * 0.004) + 1) / 2;
   const bitY = height * 0.27;
@@ -332,6 +345,7 @@ function drawCreative(ctx, width, height, theme, time, hover) {
   drawPulseWire(ctx, width * 0.73, bitY + height * 0.11, boardX + boardW * 0.82, boardY, (pulse + 0.2) % 1, "#edbd4c");
 }
 
+// Arduino board wired to a breadboard with animated jumper cables and a blinking LED.
 function drawPhysical(ctx, width, height, theme, time, hover) {
   const boardX = width * 0.16;
   const boardY = height * 0.25;
@@ -380,6 +394,7 @@ function drawPhysical(ctx, width, height, theme, time, hover) {
   drawJumper(ctx, boardX + boardW * 0.52, boardY + boardH * 0.78, breadX + breadW * 0.76, breadY + breadH * 0.32, "#5787a7", time + 440);
 }
 
+// Board game track with animated car token moving along road tiles.
 function drawGame(ctx, width, height, theme, time, hover) {
   const road = [
     [0.16, 0.22],
@@ -460,6 +475,7 @@ function drawGameCard(ctx, x, y, width, height, label, color) {
   ctx.fillText(label, x + 13, y + height * 0.62);
 }
 
+// 3D printer frame with a moving print head extruding layered filament.
 function drawMaker(ctx, width, height, theme, time, hover) {
   const frameX = width * 0.18;
   const frameY = height * 0.15;
@@ -512,6 +528,7 @@ function drawMaker(ctx, width, height, theme, time, hover) {
 
 }
 
+// Projector casting a beam onto a silhouette figure with animated projection lines.
 function drawInstallation(ctx, width, height, theme, time, hover) {
   const projectorX = width * 0.12;
   const projectorY = height * 0.62;
@@ -841,6 +858,8 @@ if (toy) {
   });
 }
 
+// ─── Interactive learning toy (Philosophy section) ────────────────────────────
+// Node graph that responds to mouse position and the mode/complexity controls.
 function drawLearningToy(time) {
   const { ctx, width, height } = fitCanvas(toy);
   const complexity = Number(range.value);
@@ -892,6 +911,8 @@ function drawLearningToy(time) {
   ctx.fillText(`nodes:${complexity}`, 18, 48);
 }
 
+// ─── Animation loop ───────────────────────────────────────────────────────────
+// Single requestAnimationFrame loop drives all canvas animations.
 function animate(time) {
   if (toy) drawLearningToy(time);
   projectCanvases.forEach((canvas) => {
@@ -902,6 +923,8 @@ function animate(time) {
 }
 
 requestAnimationFrame(animate);
+// The topbar is fixed-position, so native anchor scrolling would land behind it.
+// This function reads the topbar height and applies the correct offset.
 function scrollToHashTarget() {
   if (!window.location.hash) return;
   const targetId = decodeURIComponent(window.location.hash.slice(1));
