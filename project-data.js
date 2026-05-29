@@ -29,7 +29,7 @@ window.portfolioProjects = [
       {
         title: "What this was",
         body:
-          "Editable: describe the game prompt, design process, classroom use case, and how the prototype supports executive functioning practice.",
+          "Road Ready Rally is an inclusive, tangible educational board game built to support executive functioning and materials organization skills for neurodiverse middle school students. Grounded in Zimmerman's Self-Regulated Learning Model and Flow Theory, the gameplay balances sensory regulation with targeted cognitive challenges to maintain an optimal instructional state. The platform features a highly adaptive architecture — K-12 STEM educators can substitute customized academic review decks tied directly to their curriculum. The result is a cooperative learning experience that makes executive functioning strategies visible, tangible, and low-pressure.",
       },
       {
         title: "Learning goals",
@@ -47,19 +47,17 @@ window.portfolioProjects = [
     ],
     gallery: [
       {
-        label: "Card Design",
+        label: "Prototype Components",
         src: "./assets/projects/game-based-learning/photos/grab3.png",
-        alt: "Road Ready Rally card and prototype pieces",
+        alt: "3D printed Road Ready Rally game components including colorful tile pieces and custom tokens on a table",
       },
       {
-        label: "Add simulation screenshot",
-        src: "./assets/projects/game-based-learning/photos/grab3.png",
-        alt: "Road Ready Rally prototype image placeholder",
+        label: "Character Card Designs",
+        src: "./assets/projects/game-based-learning/photos/cover-image.png",
+        alt: "Road Ready Rally character cards showing four roles: The Farmer, The Mechanic, The Police Officer, and The Delivery Driver",
       },
       {
-        label: "Add playtest notes",
-        src: "./assets/projects/game-based-learning/photos/grab3.png",
-        alt: "Road Ready Rally playtest notes placeholder",
+        label: "Playtest Documentation",
       },
     ],
   },
@@ -76,7 +74,7 @@ window.portfolioProjects = [
       "Help visitors understand the traditional roots and modern technologies of tattooing while fostering cultural appreciation rather than appropriation.",
     impact:
       "The exhibit balanced historical context, analog making, digital media, and public piloting so visitors could leave with deeper respect for tattoo cultures and a tactile understanding of the craft.",
-    tech: ["TouchDesigner", "Blender", "Projection Mapping", "User Research", "Interpretive Media"],
+    tech: ["MadMapper", "Blender", "Projection Mapping", "User Research", "Interpretive Media", "Cultural Critique"],
     visual: "installation",
     url: "./projects/interactive-installation.html",
     snapshot: {
@@ -89,7 +87,7 @@ window.portfolioProjects = [
     },
     storyTitle: "A public exhibit where traditional tattoo practices met interactive media.",
     storyIntro:
-      "Visitors moved from historical and cultural context into two participatory stations: a projection-mapped tattoo try-on and a tactile stick-and-poke banana activity.",
+      "Visitors moved from historical and cultural context into two participatory stations: a projection-mapped tattoo try-on and a tactile stick-and-poke banana activity. Our learning goals were centered on teaching that technology can be a tool for cultural expression and critique and that the difference between traditonal method and modern tech is more fluid than one might think.",
     panels: [
       {
         title: "What this was",
