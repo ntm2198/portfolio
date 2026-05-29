@@ -68,28 +68,40 @@ const skillClusters = [
 
 const approach = [
   {
-    title: "Project-Based Learning",
-    color: "#a8d8c2",
+    title: "Project-based CS",
+    color: "#dc2626",
     body:
       "Students build toward public artifacts, prototypes, and demonstrations that make technical ideas meaningful beyond a worksheet.",
   },
   {
-    title: "Collaborative Inquiry",
-    color: "#edbd4c",
+    title: "Computational creativity",
+    color: "#ea580c",
     body:
       "Discussion, critique, and debugging routines help learners reason together while keeping individual voice visible.",
   },
   {
-    title: "Creativity in CS",
-    color: "#d47654",
+    title: "Game-based learning",
+    color: "#ca8a04",
     body:
       "Games, interactive art, sensors, and simulations position code as a medium for asking better questions.",
   },
   {
-    title: "Inclusive STEM Pedagogy",
-    color: "#5787a7",
+    title: "Inclusive STEM",
+    color: "#16a34a",
     body:
       "Multiple entry points, accessible tools, and student-centered prompts support rigorous work without narrowing who belongs.",
+  },
+  {
+    title: "Physical computing",
+    color: "#1e6fef",
+    body:
+      "Sensors, circuits, and microcontrollers extend code into the physical world, giving students a medium that is tactile, iterative, and genuinely surprising.",
+  },
+  {
+    title: "Critical Making",
+    color: "#7c3aed",
+    body:
+      "Asking who technology is built for — and by whom — turns engineering choices into design arguments worth having.",
   },
 ];
 
