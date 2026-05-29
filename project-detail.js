@@ -54,7 +54,7 @@
   }
 
   const snapshotValues = document.querySelectorAll(".snapshot-list dd");
-  if (snapshotValues.length >= 3 && project.snapshot) {
+  if (snapshotValues.length === 3 && project.snapshot) {
     snapshotValues[0].textContent = project.snapshot.audience || "";
     snapshotValues[1].textContent = project.snapshot.format || "";
     snapshotValues[2].textContent = project.snapshot.role || "";
