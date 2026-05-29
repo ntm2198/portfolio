@@ -141,7 +141,7 @@ window.portfolioProjects = [
     url: "./projects/hannah-senesh-stem.html",
     snapshot: {
       label: "Sept 2025 - Present",
-      image: "./assets/projects/hannah-senesh-stem/photos/cover.jpg",
+      image: "./assets/projects/hannah-senesh-stem/photos/newcover.jpg",
       imagePosition: "center",
       audience: "Grades 2-7",
       format: "School-Day Enrichment Curriculum & Studio Space Management",
@@ -173,8 +173,8 @@ window.portfolioProjects = [
     gallery: [
       {
         label: "Creativity Meets Technology",
-        src: "./assets/projects/hannah-senesh-stem/photos/kitty.jpg",
-        alt: "A student's hands wire LittleBits components onto a hand-painted orange cardboard cat on a makerspace workbench",
+        src: "./assets/projects/hannah-senesh-stem/photos/amongus.jpg",
+        alt: "LittleBits components arranged on a hand-drawn Among Us character sketch on a large sheet of paper on a makerspace table",
       },
       {
         label: "Scratch Logic Walkthrough",
@@ -206,6 +206,7 @@ window.portfolioProjects = [
     url: "./projects/lavner-robotics-3dprinting.html",
     snapshot: {
       label: "Summer 2025",
+      image: "./assets/projects/lavner-robotics-3dprinting/photos/robots-lineup.jpg",
       imagePosition: "center",
       audience: "Ages 7-12",
       format: "Intensive Week-Long Project-Based Programs",
@@ -236,14 +237,19 @@ window.portfolioProjects = [
     ],
     gallery: [
       {
-        label: "3D Printer Calibration Lab",
-        alt: "A close up photo of a student leveling a 3D printing setup.",
+        label: "3D Printer Output",
+        src: "./assets/projects/lavner-robotics-3dprinting/photos/printer-output.jpg",
+        alt: "A FlashForge 3D printer bed displaying several completed blue student prints including a humanoid figure, a decorative medallion, and modular shapes",
       },
       {
-        label: "LEGO Mindstorms Sensor Arrays",
+        label: "LEGO Mindstorms Showcase",
+        src: "./assets/projects/lavner-robotics-3dprinting/photos/robots-lineup.jpg",
+        alt: "Seven LEGO Mindstorms robots built by students lined up against a white wall on a carpeted floor",
       },
       {
-        label: "Rapid Prototyping Final Showcase",
+        label: "Inkscape Design Workflow",
+        src: "./assets/projects/lavner-robotics-3dprinting/photos/design-workflow.jpg",
+        alt: "A student's Inkscape vector design displayed on a large monitor showing a sneaker poster with the text Don't follow others, Make your own trail",
       },
     ],
   },
@@ -265,6 +271,7 @@ window.portfolioProjects = [
     url: "./projects/bluestamp-engineering-instruction.html",
     snapshot: {
       label: "Summers 2018 & 2023",
+      image: "./assets/projects/bluestamp-engineering-instruction/photos/project-unique-cover.jpg",
       imagePosition: "center",
       audience: "High School Students",
       format: "7-Week Intensive Engineering Residency",
@@ -295,14 +302,19 @@ window.portfolioProjects = [
     ],
     gallery: [
       {
-        label: "Arduino Microcontroller Mapping",
-        alt: "A detailed layout of a custom-built sensor system tied to an Arduino board.",
+        label: "Student Final Project",
+        src: "./assets/projects/bluestamp-engineering-instruction/photos/robot-tank.jpg",
+        alt: "A student-built Arduino tank robot with treaded chassis, colorful wiring, and a transparent blue wireless PS2-style controller on a black surface",
       },
       {
-        label: "Raspberry Pi Server Build",
+        label: "RGB LED Matrix Build",
+        src: "./assets/projects/bluestamp-engineering-instruction/photos/led-matrix.jpg",
+        alt: "A large RGB LED matrix panel displaying colorful scrolling text, wired to an Arduino Mega on a workbench",
       },
       {
-        label: "Student Portfolio Documentation Layout",
+        label: "First Working Circuit",
+        src: "./assets/projects/bluestamp-engineering-instruction/photos/arduino-lcd.jpg",
+        alt: "An Arduino Uno connected to a breadboard and LCD screen displaying Hello ARDUINO FORUM on a carpet",
       },
     ],
   },
