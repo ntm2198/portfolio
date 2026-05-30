@@ -953,3 +953,123 @@ window.addEventListener("resize", () => {
   projectCanvases.forEach((canvas) => drawProjectCanvas(canvas, performance.now(), projectHover.get(canvas)));
   if (toy) drawLearningToy(performance.now());
 });
+
+// ─── Maker Desk ────────────────────────────────────────────────────────────────
+// Clicking a .desk-object opens its data-src URL in a full-screen iframe lightbox.
+// The panel flies from the object's screen position to the viewport center using
+// a CSS custom-property FLIP technique:
+//   1. Set --start-x/y/scale on the panel (where the object is)
+//   2. Add .is-collapsed (transition: none) so the panel snaps to that position
+//   3. Remove .is-collapsed two animation frames later — the CSS transition runs
+(function initMakerDesk() {
+  const lightbox = document.getElementById("deskLightbox");
+  const panel    = document.getElementById("deskLightboxPanel");
+  const backdrop = document.getElementById("deskLightboxBackdrop");
+  const iframe   = document.getElementById("deskLightboxIframe");
+  const spinner  = document.getElementById("deskLightboxSpinner");
+  const titleEl  = document.getElementById("deskLightboxTitle");
+  const closeBtn = document.getElementById("deskLightboxClose");
+  if (!lightbox) return;
+
+  let lastFocused = null; // element to restore focus to when lightbox closes
+
+  // ── Open ──────────────────────────────────────────────────────────────────
+
+  function openDesk(obj) {
+    const src   = (obj.dataset.src || "").trim();
+    const label = obj.dataset.label || "Maker Desk";
+
+    // Guard: prompt to add content URL if placeholder is still empty.
+    if (!src) {
+      // eslint-disable-next-line no-alert
+      alert(`"${label}" has no content URL yet.\nAdd one to data-src on the button in index.html.`);
+      return;
+    }
+
+    lastFocused = document.activeElement;
+    titleEl.textContent = label;
+    spinner.classList.remove("is-hidden");
+    iframe.src = "about:blank";
+
+    // FLIP setup: compute the panel's starting offset from its natural center.
+    const rect    = obj.getBoundingClientRect();
+    const vpW     = window.innerWidth;
+    const vpH     = window.innerHeight;
+    const objCX   = rect.left + rect.width  / 2;
+    const objCY   = rect.top  + rect.height / 2;
+    const startX  = objCX - vpW / 2;
+    const startY  = objCY - vpH / 2;
+    // Natural panel width is min(90vw, 880px); compute scale to match object size.
+    const panelW  = Math.min(vpW * 0.9, 880);
+    const startScale = Math.max(0.05, rect.width / panelW);
+
+    panel.style.setProperty("--start-x",     `${startX}px`);
+    panel.style.setProperty("--start-y",     `${startY}px`);
+    panel.style.setProperty("--start-scale", startScale);
+
+    // Snap to collapsed position (transition: none), then trigger fly-in.
+    panel.classList.add("is-collapsed");
+    lightbox.hidden = false;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        lightbox.classList.add("is-open");
+        panel.classList.remove("is-collapsed"); // spring transition fires here
+      });
+    });
+
+    // Load iframe after the expand animation finishes (~420 ms).
+    setTimeout(() => {
+      iframe.src = src;
+      iframe.addEventListener("load", () => spinner.classList.add("is-hidden"), { once: true });
+    }, 420);
+
+    closeBtn.focus();
+  }
+
+  // ── Close ─────────────────────────────────────────────────────────────────
+
+  function closeDesk() {
+    lightbox.classList.remove("is-open"); // backdrop fades out
+    panel.classList.add("is-closing");    // panel snaps to small dot at center
+
+    setTimeout(() => {
+      lightbox.hidden = true;
+      panel.classList.remove("is-closing");
+      iframe.src = "about:blank";
+      spinner.classList.remove("is-hidden");
+      if (lastFocused) lastFocused.focus();
+    }, 320);
+  }
+
+  // ── Event wiring ──────────────────────────────────────────────────────────
+
+  document.querySelectorAll(".desk-object").forEach((obj) => {
+    obj.addEventListener("click", () => openDesk(obj));
+  });
+
+  closeBtn.addEventListener("click", closeDesk);
+  backdrop.addEventListener("click", closeDesk);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !lightbox.hidden) closeDesk();
+  });
+
+  // Trap Tab focus within the open lightbox (accessibility).
+  lightbox.addEventListener("keydown", (e) => {
+    if (e.key !== "Tab" || lightbox.hidden) return;
+    const focusable = [...lightbox.querySelectorAll(
+      "button, [href], input, [tabindex]:not([tabindex='-1'])"
+    )].filter((el) => !el.disabled);
+    if (focusable.length < 2) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+})();

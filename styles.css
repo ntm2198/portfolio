@@ -1231,6 +1231,589 @@ h3 {
   animation: fade-in-up 0.6s ease 0.38s both;
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   THE MAKER DESK
+   Section housing small games, zines, and teaching handouts as clickable
+   "physical objects" resting on an illustrated desk surface.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Section band ─────────────────────────────────────────────────────────── */
+
+.maker-desk-band {
+  background:
+    linear-gradient(180deg, var(--paper-2) 0%, #e4dccf 100%);
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.maker-desk-band .section-heading p:not(.eyebrow) {
+  color: var(--ink-soft);
+  font-size: 1.04rem;
+  max-width: 560px;
+}
+
+/* ── Desk surface ─────────────────────────────────────────────────────────── */
+/* Warm wood-toned surface the objects rest on; front edge gives depth.       */
+
+.desk-surface {
+  align-items: flex-end;
+  background:
+    /* subtle wood-grain stripes */
+    repeating-linear-gradient(
+      91deg,
+      transparent            0px,  transparent            50px,
+      rgba(139, 110, 75, 0.04) 50px, rgba(139, 110, 75, 0.04) 52px
+    ),
+    linear-gradient(180deg, #ddd4bf 0%, #cdc0a8 100%);
+  border-radius: 8px 8px 0 0;
+  border-top: 5px solid #c5b698;
+  box-shadow:
+    inset 0 2px 0 rgba(255, 255, 255, 0.38),
+    0 8px 24px rgba(28, 37, 51, 0.16);
+  display: flex;
+  gap: clamp(36px, 7vw, 96px);
+  justify-content: center;
+  margin-top: 52px;
+  padding: clamp(40px, 5vw, 72px) clamp(32px, 8vw, 120px) 0;
+  position: relative;
+}
+
+/* Front-facing desk lip */
+.desk-surface::after {
+  background: linear-gradient(180deg, #c5b698, #b0a07e);
+  border-radius: 0 0 6px 6px;
+  bottom: -20px;
+  content: "";
+  height: 20px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+/* ── Base desk-object styles ──────────────────────────────────────────────── */
+/* Each variant sets --obj-tilt (resting rotation) and --obj-shadow-color.    */
+
+.desk-object {
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0;
+  position: relative;
+  transform: rotate(var(--obj-tilt, 0deg));
+  transform-origin: center bottom;
+  /* spring-feel lift on hover */
+  transition:
+    transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    filter    360ms ease;
+  will-change: transform;
+}
+
+.desk-object:hover,
+.desk-object:focus-visible {
+  filter: drop-shadow(0 20px 32px var(--obj-shadow-color, rgba(28, 37, 51, 0.26)));
+  outline: none;
+  transform: translateY(-18px) rotate(0deg) scale(1.07);
+}
+
+/* Small label that fades in on hover */
+.desk-obj-cue {
+  color: var(--ink-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: opacity 200ms ease;
+}
+
+.desk-object:hover .desk-obj-cue,
+.desk-object:focus-visible .desk-obj-cue {
+  opacity: 1;
+}
+
+.desk-obj-icon {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.desk-obj-title {
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.desk-obj-meta {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.66rem;
+  font-weight: 700;
+  opacity: 0.68;
+  text-transform: uppercase;
+}
+
+/* ── Cartridge ────────────────────────────────────────────────────────────── */
+/* Game Boy Advance-style plastic cart: angled top-right corner, inset label, */
+/* and gold connector contacts cut into the bottom.                            */
+
+.desk-cartridge {
+  --obj-tilt: 4deg;
+  --obj-shadow-color: rgba(26, 38, 80, 0.32);
+}
+
+.cartridge-body {
+  background: #1b1e30;
+  /* GBA cartridge shape: cut top-right corner, connector notch at bottom */
+  clip-path: polygon(
+    0%              0%,
+    calc(100% - 22px) 0%,
+    100%            22px,
+    100%            79%,
+    calc(100% - 10px) 79%,
+    calc(100% - 10px) 100%,
+    10px            100%,
+    10px            79%,
+    0%              79%
+  );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 204px;
+  position: relative;
+  width: 150px;
+}
+
+/* Top-edge sheen — plastic highlight */
+.cartridge-body::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11) 0%, transparent 28%);
+  border-radius: 8px 8px 0 0;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+/* Vent indent on top face */
+.cartridge-top-notch {
+  background: #13162a;
+  border-radius: 0 0 3px 3px;
+  height: 7px;
+  margin: 10px auto 0;
+  width: 44px;
+}
+
+/* Inset label — clay-orange gradient with faint scanlines */
+.cartridge-label {
+  background: linear-gradient(135deg, #f26522 0%, #df4d0e 100%);
+  border-radius: 5px;
+  flex: 1;
+  margin: 8px 10px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+}
+
+.cartridge-label::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0)    0px, rgba(0, 0, 0, 0)    3px,
+    rgba(0, 0, 0, 0.06) 3px, rgba(0, 0, 0, 0.06) 4px
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+/* Gold connector pins — positioned inside the bottom notch */
+.cartridge-contacts {
+  bottom: 0;
+  display: flex;
+  gap: 3px;
+  height: 11px;
+  justify-content: center;
+  left: 10px;
+  padding: 2px 5px;
+  position: absolute;
+  right: 10px;
+}
+
+.cartridge-contacts span {
+  background: linear-gradient(180deg, #d4a843 0%, #a8832e 100%);
+  border-radius: 0 0 2px 2px;
+  flex: 1;
+}
+
+/* ── Zine ─────────────────────────────────────────────────────────────────── */
+/* Staple-bound booklet, viewed straight-on: cobalt spine on left, cream body.*/
+
+.desk-zine {
+  --obj-tilt: -3deg;
+  --obj-shadow-color: rgba(30, 111, 239, 0.3);
+}
+
+.zine-body {
+  background: #fffcf5;
+  border: 1px solid rgba(28, 37, 51, 0.2);
+  border-radius: 3px 6px 6px 3px;
+  /* Stacked pages visible as thin shadows on the right edge */
+  box-shadow:
+    3px 0 0 rgba(28, 37, 51, 0.06),
+    5px 0 0 rgba(28, 37, 51, 0.04);
+  display: flex;
+  height: 218px;
+  overflow: hidden;
+  position: relative;
+  width: 164px;
+}
+
+/* Left spine — cobalt strip with glint marks for staples */
+.zine-spine {
+  background: linear-gradient(180deg, var(--blue) 0%, #1558c0 100%);
+  flex-shrink: 0;
+  position: relative;
+  width: 18px;
+}
+
+.zine-spine::before,
+.zine-spine::after {
+  background: rgba(255, 255, 255, 0.32);
+  border-radius: 1px;
+  content: "";
+  height: 11px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 3px;
+}
+
+.zine-spine::before { top: 22%; }
+.zine-spine::after  { top: 70%; }
+
+.zine-cover {
+  color: var(--ink);
+  flex: 1;
+  padding: 14px 12px;
+  position: relative;
+}
+
+/* Faint ruled lines on the lower cover area */
+.zine-cover::after {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent             0px,  transparent             11px,
+    rgba(28, 37, 51, 0.06)  11px, rgba(28, 37, 51, 0.06)  12px
+  );
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 76px;
+}
+
+/* ── Paper stack ──────────────────────────────────────────────────────────── */
+/* Three document sheets fanned slightly, top sheet has a dogear fold and     */
+/* placeholder header + text lines.                                            */
+
+/* ── UX Prototype ─────────────────────────────────────────────────────────── */
+/* Styled to look like a miniature browser window with a wireframe layout     */
+/* inside — traffic-light dots, URL bar, and schematic UI blocks.             */
+
+.desk-prototype {
+  --obj-tilt: -1.5deg;
+  --obj-shadow-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Outer browser shell */
+.prototype-frame {
+  background: #ffffff;
+  border: 1px solid rgba(28, 37, 51, 0.18);
+  border-radius: 10px;
+  box-shadow:
+    0 4px 16px rgba(28, 37, 51, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  height: 210px;
+  overflow: hidden;
+  width: 172px;
+}
+
+/* Browser chrome: dots + URL bar */
+.proto-chrome {
+  align-items: center;
+  background: #f0ecf8;
+  border-bottom: 1px solid rgba(124, 58, 237, 0.14);
+  display: flex;
+  flex-shrink: 0;
+  gap: 8px;
+  height: 28px;
+  padding: 0 10px;
+}
+
+.proto-dots {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+/* macOS-style traffic lights */
+.proto-dots span {
+  border-radius: 50%;
+  display: block;
+  height: 7px;
+  width: 7px;
+}
+
+.dot-red    { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green  { background: #28c840; }
+
+/* Simulated URL bar */
+.proto-url-bar {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  border-radius: 4px;
+  flex: 1;
+  height: 14px;
+}
+
+/* Viewport area below the chrome */
+.proto-canvas {
+  background: #faf8ff;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Schematic nav strip at top of canvas */
+.proto-nav-bar {
+  background: var(--violet);
+  height: 20px;
+  opacity: 0.85;
+  width: 100%;
+}
+
+/* Content area with wireframe blocks */
+.proto-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 8px;
+}
+
+/* Hero / banner placeholder block */
+.proto-hero-block {
+  background: linear-gradient(90deg, rgba(124, 58, 237, 0.14), rgba(30, 111, 239, 0.1));
+  border: 1px dashed rgba(124, 58, 237, 0.25);
+  border-radius: 4px;
+  height: 36px;
+}
+
+/* Three equal card stubs */
+.proto-card-row {
+  display: flex;
+  gap: 5px;
+}
+
+.proto-card-row span {
+  background: rgba(28, 37, 51, 0.07);
+  border: 1px solid rgba(28, 37, 51, 0.1);
+  border-radius: 3px;
+  flex: 1;
+  height: 28px;
+}
+
+/* Text line stubs */
+.proto-text-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.proto-text-lines span {
+  background: rgba(28, 37, 51, 0.1);
+  border-radius: 2px;
+  display: block;
+  height: 5px;
+}
+
+.proto-text-lines span:nth-child(1) { width: 88%; }
+.proto-text-lines span:nth-child(2) { width: 100%; }
+.proto-text-lines span:nth-child(3) { width: 64%; }
+
+/* Gradient label bar at bottom — overlays the wireframe like a frosted badge */
+/* In-flow label sits just below the chrome bar, above the wireframe */
+.proto-label {
+  background: rgba(250, 248, 255, 0.92);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.14);
+  color: var(--ink);
+  flex-shrink: 0;
+  padding: 6px 10px;
+}
+
+/* ── Lightbox overlay ─────────────────────────────────────────────────────── */
+/* Fixed full-viewport overlay; the panel inside uses FLIP-style CSS custom   */
+/* props to start at the clicked object's position before transitioning open. */
+
+.desk-lightbox {
+  inset: 0;
+  position: fixed;
+  z-index: 200;
+}
+
+.desk-lightbox[hidden] {
+  display: none;
+}
+
+/* Blurred dark backdrop fades in behind the panel */
+.desk-lightbox-backdrop {
+  backdrop-filter: blur(6px);
+  background: rgba(28, 37, 51, 0.72);
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity 240ms ease;
+}
+
+.desk-lightbox.is-open .desk-lightbox-backdrop {
+  opacity: 1;
+}
+
+/* The content panel, naturally centered at the viewport midpoint */
+.desk-lightbox-panel {
+  background: #fffcf5;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 32px 72px rgba(28, 37, 51, 0.32);
+  display: flex;
+  flex-direction: column;
+  height: min(86vh, 680px);
+  left: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  /* Natural centered state — JS removes is-collapsed to trigger this */
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity   280ms ease;
+  width: min(90vw, 880px);
+}
+
+/* Starting position: panel sits at the object's location, shrunken to match */
+/* its size. JS sets --start-x/y (offset from viewport center) and           */
+/* --start-scale (object width / panel natural width).                        */
+/* transition: none ensures the collapsed state snaps in with no animation.  */
+.desk-lightbox-panel.is-collapsed {
+  opacity: 0;
+  transform:
+    translate(
+      calc(-50% + var(--start-x, 0px)),
+      calc(-50% + var(--start-y, 0px))
+    )
+    scale(var(--start-scale, 0.12));
+  transition: none;
+}
+
+/* Closing: snap back down to a small dot at center (no position offset) */
+.desk-lightbox-panel.is-closing {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.05);
+  transition:
+    transform 280ms cubic-bezier(0.55, 0, 1, 0.45),
+    opacity   200ms ease;
+}
+
+/* Top chrome: label + close button */
+.desk-lightbox-chrome {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 14px 18px;
+}
+
+.desk-lightbox-title {
+  color: var(--ink-soft);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.desk-lightbox-close {
+  align-items: center;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink-soft);
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  height: 36px;
+  justify-content: center;
+  padding: 0;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  width: 36px;
+}
+
+.desk-lightbox-close:hover,
+.desk-lightbox-close:focus-visible {
+  background: #fff0e8;
+  color: var(--clay);
+  transform: scale(1.1);
+}
+
+/* iframe fills remaining height */
+.desk-lightbox-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Spinning loader shown while iframe loads */
+.desk-lightbox-spinner {
+  animation: desk-spin 0.8s linear infinite;
+  border: 3px solid rgba(28, 37, 51, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--clay);
+  height: 32px;
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 200ms ease;
+  width: 32px;
+  z-index: 1;
+}
+
+.desk-lightbox-spinner.is-hidden {
+  opacity: 0;
+}
+
+@keyframes desk-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.desk-lightbox-iframe {
+  border: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
 @media (max-width: 1300px) {
   .project-grid {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
@@ -1325,6 +1908,16 @@ h3 {
   .project-card {
     min-height: auto;
   }
+
+  /* Maker Desk: shrink objects on small screens */
+  .desk-surface {
+    gap: 24px;
+    padding: 32px 20px 0;
+  }
+
+  .cartridge-body  { height: 166px; width: 122px; }
+  .zine-body       { height: 176px; width: 132px; }
+  .prototype-frame { height: 170px; width: 138px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

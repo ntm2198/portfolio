@@ -20,6 +20,7 @@
         <nav class="nav-links" aria-label="Page sections">
           <a href="#philosophy">Philosophy</a>
           <a href="#projects">Projects</a>
+          <a href="#maker-desk">Maker Desk</a>
           <a href="#experience">Experience</a>
           <a href="#workplaces">Workplaces</a>
           <a href="#contact">Contact</a>
@@ -95,6 +96,158 @@
           <!-- Populated by script.js from project-data.js — edit projects there, not here -->
           <div class="project-grid" id="projectGrid"></div>
         </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             THE MAKER DESK
+             Three physical-object thumbnails (cartridge, zine, paper stack)
+             open an iframe lightbox via a fly-up animation.
+             Fill in data-src on each button with the actual content URL
+             (Scratch embed, PDF path, itch.io URL, etc.) when ready.
+        ═══════════════════════════════════════════════════════════════════ -->
+        <section class="section-band maker-desk-band" id="maker-desk" aria-labelledby="maker-desk-title">
+          <div class="section-heading">
+            <p class="eyebrow">My "Maker Desk"</p>
+            <h2 id="maker-desk-title">Side projects, experiments, and teaching materials.</h2>
+            <p>
+              Playful artifacts from various domains — games, zines, papers, UX Wireframes, etc.
+              Click any object to open it.
+            </p>
+          </div>
+
+          <div class="desk-surface" role="list" aria-label="Maker desk objects">
+
+            <!-- ── Cartridge: small game or interactive ───────────────────── -->
+            <!-- Set data-src to a Scratch embed URL, itch.io iframe, etc.    -->
+            <button class="desk-object desk-cartridge"
+                    role="listitem"
+                    data-src="https://itch.io/embed-upload/17333947?color=333333"
+                    data-label="Learning Design Academy Game Demo"
+                    aria-label="Open: Game Demo"
+                    type="button">
+              <div class="cartridge-body">
+                <div class="cartridge-top-notch"></div>
+                <div class="cartridge-label">
+                  <span class="desk-obj-icon" aria-hidden="true">🎮</span>
+                  <strong class="desk-obj-title">Game Demo</strong>
+                  <span class="desk-obj-meta">Learning Design · Interactive</span>
+                </div>
+                <div class="cartridge-contacts" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <span class="desk-obj-cue" aria-hidden="true">Click to play</span>
+            </button>
+
+            <!-- ── Zine: print-ready PDF booklet ─────────────────────────── -->
+            <!-- Set data-src to a PDF path, e.g. "./assets/docs/zine.pdf"   -->
+            <button class="desk-object desk-zine"
+                    role="listitem"
+                    data-src="https://www.canva.com/design/DAG7WB4awZE/LLOwPeSeCHW9GN-pgkMGAg/view?embed"
+                    data-label="NYU Game Center Zine"
+                    aria-label="Open: NYU Game Center Zine"
+                    type="button">
+              <div class="zine-body">
+                <div class="zine-spine"></div>
+                <div class="zine-cover">
+                  <span class="desk-obj-icon" aria-hidden="true">📄👾</span>
+                  <strong class="desk-obj-title">NYU Game Center Zine</strong>
+                  <span class="desk-obj-meta">Print-ready PDF</span>
+                </div>
+              </div>
+              <span class="desk-obj-cue" aria-hidden="true">Click to read</span>
+            </button>
+
+            <!-- ── Prototype: UX / web design prototype ──────────────────── -->
+            <!-- Set data-src to a Figma embed URL, hosted prototype, etc.   -->
+            <button class="desk-object desk-prototype"
+                    role="listitem"
+                    data-src=""
+                    data-label="UX Prototype"
+                    aria-label="Open: UX Prototype"
+                    type="button">
+              <div class="prototype-frame">
+                <!-- Browser chrome bar with traffic-light dots + URL pill -->
+                <div class="proto-chrome" aria-hidden="true">
+                  <div class="proto-dots">
+                    <span class="dot-red"></span>
+                    <span class="dot-yellow"></span>
+                    <span class="dot-green"></span>
+                  </div>
+                  <div class="proto-url-bar"></div>
+                </div>
+                <!-- Label sits in-flow just below chrome, aligned with other objects -->
+                <div class="proto-label">
+                  <span class="desk-obj-icon" aria-hidden="true">👪💻🦺</span>
+                  <strong class="desk-obj-title">Parents & Screentime App</strong>
+                  <span class="desk-obj-meta">Figma · UX Design</span>
+                </div>
+                <!-- Wireframe content area -->
+                <div class="proto-canvas">
+                  <div class="proto-nav-bar" aria-hidden="true"></div>
+                  <div class="proto-content" aria-hidden="true">
+                    <div class="proto-hero-block"></div>
+                    <div class="proto-card-row">
+                      <span></span><span></span><span></span>
+                    </div>
+                    <div class="proto-text-lines">
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <span class="desk-obj-cue" aria-hidden="true">Click to explore</span>
+            </button>
+
+            <!--Queer health zine-->
+            <button class="desk-object desk-zine"
+                    role="listitem"
+                    data-src="https://itch.io/embed/649317"
+                    data-label="Queer Health Zine"
+                    aria-label="Open: Queer Health Zine"
+                    type="button">
+              <div class="zine-body">
+                <div class="zine-spine"></div>
+                <div class="zine-cover">
+                  <span class="desk-obj-icon" aria-hidden="true">❤️‍🩹🏳️‍⚧️🏳️‍🌈</span>
+                  <strong class="desk-obj-title">Queer Health Zine</strong>
+                  <span class="desk-obj-meta">Print-ready PDF</span>
+                </div>
+              </div>
+              <span class="desk-obj-cue" aria-hidden="true">Click to read</span>
+            </button>
+
+          </div>
+        </section>
+
+        <!-- ─── Maker Desk lightbox ──────────────────────────────────────────
+             The panel flies from the clicked object's screen coordinates to
+             the viewport center using a CSS custom-property FLIP animation.
+             JS in script.js sets --start-x, --start-y, --start-scale before
+             toggling the is-collapsed / is-open classes.
+        ─────────────────────────────────────────────────────────────────── -->
+        <div class="desk-lightbox" id="deskLightbox" hidden
+             role="dialog" aria-modal="true" aria-label="Maker Desk viewer">
+          <div class="desk-lightbox-backdrop" id="deskLightboxBackdrop"></div>
+          <div class="desk-lightbox-panel" id="deskLightboxPanel">
+            <div class="desk-lightbox-chrome">
+              <span class="desk-lightbox-title" id="deskLightboxTitle"></span>
+              <button class="desk-lightbox-close" id="deskLightboxClose"
+                      aria-label="Close viewer" type="button">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="desk-lightbox-content">
+              <div class="desk-lightbox-spinner" id="deskLightboxSpinner"></div>
+              <iframe class="desk-lightbox-iframe" id="deskLightboxIframe"
+                      title="Maker Desk content"
+                      loading="lazy"
+                      allow="autoplay; fullscreen"
+                      src="about:blank"></iframe>
+            </div>
+          </div>
+        </div>
 
         <section class="section-band experience-band" id="experience" aria-labelledby="experience-title">
           <div class="section-heading">
