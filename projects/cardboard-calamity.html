@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cardboard Calamity — a DIY alt-control arcade game by Nicholas Markus, built from a handmade cardboard controller with physical knobs and dials."
+    />
+    <title>Cardboard Calamity | Nicholas Markus</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="project-page" data-project-id="cardboard-calamity">
+    <div class="site-shell">
+      <header class="topbar" aria-label="Project navigation">
+        <a class="brand-mark" href="../index.html#home" aria-label="Nicholas Markus home">
+          <span class="brand-glyph" aria-hidden="true">NM</span>
+          <span>Nicholas Markus</span>
+        </a>
+        <nav class="nav-links" aria-label="Portfolio sections">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#experience">Experience</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main>
+        <!-- Hero — populated by project-detail.js from project-data.js -->
+        <section class="section-band project-detail-hero">
+          <div>
+            <a class="back-link" href="../index.html#projects">Back to projects</a>
+            <p class="eyebrow"></p>
+            <h1></h1>
+            <p class="project-summary"></p>
+            <div class="tag-list" aria-label="Technologies used"></div>
+          </div>
+
+          <aside class="project-snapshot" aria-label="Project snapshot">
+            <div class="snapshot-visual"><span></span></div>
+            <dl class="snapshot-list">
+              <div><dt>Audience</dt><dd></dd></div>
+              <div><dt>Format</dt><dd></dd></div>
+              <div><dt>Role</dt><dd></dd></div>
+            </dl>
+          </aside>
+        </section>
+
+        <!-- Story + panels — populated by project-detail.js -->
+        <section class="section-band project-detail-band" aria-labelledby="project-story-title">
+          <div class="section-heading wide">
+            <p class="eyebrow">Project Story</p>
+            <h2 id="project-story-title"></h2>
+            <p></p>
+          </div>
+
+          <div class="detail-layout">
+            <div class="detail-main">
+              <article class="detail-panel"></article>
+              <article class="detail-panel"></article>
+              <article class="detail-panel"></article>
+            </div>
+
+            <aside class="detail-sidebar">
+              <article class="reflection-card">
+                <h3>Where this is going</h3>
+                <p></p>
+              </article>
+            </aside>
+          </div>
+
+          <!-- Gallery — populated by project-detail.js; add images in project-data.js -->
+          <div class="project-gallery" aria-label="Project media"></div>
+        </section>
+      </main>
+    </div>
+
+    <!-- project-data.js must load first -->
+    <script src="../project-data.js?v=20260530-cardboard-calamity"></script>
+    <script src="../project-detail.js?v=20260530-cardboard-calamity"></script>
+  </body>
+</html>

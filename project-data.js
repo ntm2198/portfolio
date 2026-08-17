@@ -1,4 +1,57 @@
 window.portfolioProjects = [
+  // ── Cardboard Calamity ─────────────────────────────────────────────────────
+  // Summer 2026 DIY alt-control game project. Fill in details when ready.
+  {
+    id: "cardboard-calamity",
+    title: "Cardboard Calamity",
+    detailTitle: "Cardboard Calamity: A DIY Alt-Control Game",
+    label: "Alt-Control Game Dev",
+    theme: "#c2853f",
+    isNew: true,
+    overview:
+      "A DIY alt-control arcade game built around a handmade cardboard controller rigged with physical knobs, dials, and switches — playable and in progress.",
+    goal:
+      "Explore how physical, handcrafted interfaces change the feel of digital play and lower the barrier to building custom game hardware.",
+    impact:
+      "Details coming soon — project in active development, Summer 2026.",
+    tech: ["Arduino", "Physical Computing", "Alt-Control Design", "DIY Hardware", "p5.js"],
+    visual: "cardboard",
+    url: "./projects/cardboard-calamity.html",
+    snapshot: {
+      label: "Summer 2026 — In Progress",
+      audience: "Public / Playtesters",
+      format: "Alt-control arcade installation",
+      role: "Designer, builder, programmer",
+    },
+    storyTitle: "What happens when the controller is the craft project?",
+    storyIntro:
+      "Cardboard Calamity is a summer experiment in DIY game hardware — building the physical interface from scratch, then designing a game that only makes sense through that interface.",
+    panels: [
+      {
+        title: "The concept",
+        body:
+          "An alt-control game played entirely through a handbuilt cardboard controller — knobs, dials, sliders, and buttons assembled from salvaged materials and an Arduino. The physical act of making the controller is part of the design process.",
+      },
+      {
+        title: "What I'm figuring out",
+        items: [
+          "How physical affordances shape player intuition and game feel.",
+          "What game mechanics are uniquely suited to knob/dial input.",
+          "How to document a DIY build so others can recreate it.",
+        ],
+      },
+      {
+        title: "Status",
+        body:
+          "Hardware prototype in progress. More documentation, photos, and playtest notes coming soon.",
+      },
+    ],
+    gallery: [
+      { label: "Controller build — photos coming soon" },
+      { label: "Game screenshot — coming soon" },
+      { label: "Wiring diagram — coming soon" },
+    ],
+  },
   {
     id: "game-based-learning",
     title: "Game-Based Skill Building for Students with ADHD",

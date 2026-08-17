@@ -379,7 +379,7 @@ h3 {
 .project-grid {
   display: grid;
   gap: 18px;
-  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
   margin-top: 36px;
 }
 
@@ -507,6 +507,32 @@ h3 {
   font-weight: 800;
   margin-top: 2px;
   padding: 7px 10px;
+}
+
+/* "NEW!" sticker badge — floats in the top-right of the project card canvas area */
+.project-new-badge {
+  animation: new-badge-bob 2.4s ease-in-out infinite;
+  background: var(--clay);
+  border: 2.5px solid #fff;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(242, 101, 34, 0.38);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  padding: 5px 9px;
+  pointer-events: none;
+  position: absolute;
+  right: 14px;
+  text-transform: uppercase;
+  top: 14px;
+  z-index: 3;
+}
+
+@keyframes new-badge-bob {
+  0%, 100% { transform: translateY(0)   rotate(-4deg); }
+  50%       { transform: translateY(-5px) rotate(3deg); }
 }
 
 .tag-list {
