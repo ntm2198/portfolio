@@ -1,6 +1,9 @@
 window.portfolioProjects = [
   // ── Cardboard Calamity ─────────────────────────────────────────────────────
   // Summer 2026 DIY alt-control game project. Fill in details when ready.
+ // Drop-in replacement for the existing "cardboard-calamity" object in your projects array.
+  // New fields vs. the previous version: program, people, cohort, bio.
+  // Your detail-page template will need render logic for those (see notes).
   {
     id: "cardboard-calamity",
     title: "Cardboard Calamity",
@@ -9,49 +12,196 @@ window.portfolioProjects = [
     theme: "#c2853f",
     isNew: true,
     overview:
-      "A DIY alt-control arcade game built around a handmade cardboard controller rigged with physical knobs, dials, and switches — playable and in progress.",
+      "An arcade cabinet from an alternate timeline where all essential infrastructure is made of cardboard. Slide the control handle to keep the dials in the safe zone, and see how long you can hold it together. Built and exhibited during a four-week alt-control games residency in Berlin.",
     goal:
-      "Explore how physical, handcrafted interfaces change the feel of digital play and lower the barrier to building custom game hardware.",
+      "Explore how physical, handcrafted interfaces change the feel of digital play — and how a game's mechanics can carry an argument that its text refuses to make out loud.",
     impact:
-      "Details coming soon — project in active development, Summer 2026.",
-    tech: ["Arduino", "Physical Computing", "Alt-Control Design", "DIY Hardware", "p5.js"],
+      "Exhibited 31 July 2026 in the closing public showcase of the Summer 2026 cohort at School of Machines, Making & Make-Believe in Berlin, alongside seven other artists from eight countries. Ongoing development toward documentation others can build from.",
+    tech: [
+      "Arduino",
+      "Physical Computing",
+      "Alt-Control Design",
+      "DIY Hardware",
+      "Servo Mechanics",
+    ],
     visual: "cardboard",
     url: "./projects/cardboard-calamity.html",
     snapshot: {
-      label: "Summer 2026 — In Progress",
-      audience: "Public / Playtesters",
+      label: "Summer 2026 — Berlin",
+      image: "./assets/projects/cardboard-calamity/photos/cover-exhibition.jpg",
+      imagePosition: "center",
+      audience: "Public exhibition / Playtesters",
       format: "Alt-control arcade installation",
       role: "Designer, builder, programmer",
+      program: "School of Machines, Making & Make-Believe",
     },
+ 
     storyTitle: "What happens when the controller is the craft project?",
     storyIntro:
-      "Cardboard Calamity is a summer experiment in DIY game hardware — building the physical interface from scratch, then designing a game that only makes sense through that interface.",
+      "Cardboard Calamity started as a summer experiment in DIY game hardware — build the physical interface from scratch, then design a game that only makes sense through that interface. It ended up being about how it feels when the thing you're managing keeps speeding up and nobody will admit it.",
+ 
     panels: [
       {
         title: "The concept",
         body:
-          "An alt-control game played entirely through a handbuilt cardboard controller — knobs, dials, sliders, and buttons assembled from salvaged materials and an Arduino. The physical act of making the controller is part of the design process.",
+          "An alt-control game played entirely through a handbuilt cardboard arcade cabinet — a sliding control handle, physical dials, and switches assembled from salvaged materials and an Arduino. Keep the dials in the safe zone. The dials are absolutely not gradually speeding up to make the demands of the game harder to meet. You just aren't trying hard enough. :) The physical act of making the controller is part of the argument.",
+      },
+      {
+        title: "How it works",
+        body:
+          "An Arduino Mega drives the cabinet over a shared I2C bus: a PCA9685 servo driver moves the physical dial needles, debounced switches read player input, and a small OLED handles on-screen feedback. Servo power runs on its own supply so the display doesn't brown out when every needle swings at once. Non-blocking servo control and a dirty-flag render loop keep the whole thing responsive on modest hardware. The finished cabinet is fully self-contained — at the exhibition it needed exactly one wall outlet and nothing else.",
+      },
+      {
+        title: "How it got here",
+        body:
+          "The pitch I walked in with was a different game: a train-tracks piece about the illusion of choice, played through a modified rubber stamp — you think you're deciding, but you aren't, and over-optimizing isn't worth it. The servos and the Arduino Mega survived the rewrite; so did the thesis. Cardboard Calamity says the same thing with a straighter face.",
+      },
+      {
+        title: "Where it was made",
+        body:
+          "Built during 'Creating Alt-Ctrl Games as Feminist Art Practice,' a four-week full-time program (6–31 July 2026) at School of Machines, Making & Make-Believe in Berlin-Mitte. The program frames game-making as a way to examine the systems of power it wants to expose — asking whether the political landscape of games changes when you change who gets to build them. Four weeks running from play and paper prototyping, through bitsy and Godot, Krita for visual assets, Audacity for sound, and Dialogic for non-linear writing, into electronics, materials, and a public exhibition on the final evening. Participants are invited to stay on for a one-month residency at Make-Believe Studio on the fifth floor of ACUD.",
+      },
+      {
+        title: "About the school",
+        body:
+          "School of Machines, Making & Make-Believe is an independent school founded in Berlin in 2014 by artist and educator Rachel Uwa, working at the intersection of art, technology, design, and human connection. It runs small, intensive, hands-on programs taught by practicing artists and technologists, each ending in a public exhibition of student work. The school deliberately treats prior experience as optional and keeps classes small, with solidarity tickets and scholarships aimed at women, BIPOC, LGBTQIA+, and other communities under-represented in art and tech. Every program is one-of-a-kind — topics, instructors, duration, and even the host country shift year to year.",
       },
       {
         title: "What I'm figuring out",
         items: [
           "How physical affordances shape player intuition and game feel.",
-          "What game mechanics are uniquely suited to knob/dial input.",
-          "How to document a DIY build so others can recreate it.",
+          "What mechanics are uniquely suited to dial and handle input — things a gamepad can't ask of you.",
+          "How escalating difficulty reads as a systems critique rather than a difficulty curve.",
+          "How to document a DIY build so others can recreate it from salvaged parts.",
         ],
       },
       {
         title: "Status",
         body:
-          "Hardware prototype in progress. More documentation, photos, and playtest notes coming soon.",
+          "Playable prototype, exhibited in Berlin, still in active development. Wiring diagram, build documentation, and playtest notes in progress.",
       },
     ],
-    gallery: [
-      { label: "Controller build — photos coming soon" },
-      { label: "Game screenshot — coming soon" },
-      { label: "Wiring diagram — coming soon" },
+ 
+    program: {
+      name: "Creating Alt-Ctrl Games as Feminist Art Practice",
+      school: "School of Machines, Making & Make-Believe",
+      location: "Berlin-Mitte, Germany",
+      dates: "6–31 July 2026",
+      exhibition: "31 July 2026",
+      format: "Four weeks, full-time, eight-person international cohort",
+      founded: 2014,
+      founder: "Rachel Uwa",
+      url: "https://www.schoolofma.org/summer-2026/creating-alt-ctrl-as-feminist-art-practice",
+      schoolUrl: "https://www.schoolofma.org/",
+    },
+ 
+    people: [
+      {
+        name: "lislis",
+        role: "Lead instructor — creative technologist, activist, artist",
+        url: "http://lislis.xyz",
+      },
+      {
+        name: "Rachel Uwa",
+        pronouns: "they/she",
+        role: "Program facilitator; founder & creative director, School of MA",
+        url: "https://www.schoolofma.org/about",
+      },
+      {
+        name: "Chloé Desmoineaux",
+        pronouns: "they/them",
+        role: "Guest — Alt+Ctrl artist & game curator; alt.ctrl and queer game theory workshop",
+        url: "https://chloedesmoineaux.surf/",
+      },
+      {
+        name: "Lorenzo Pilia",
+        role: "Guest — curator & event producer, Talk & Play / Saftladen",
+        url: "https://lorenzo.pilia.it/",
+      },
+      {
+        name: "Gerard Roberts (kidkanevil)",
+        role: "Guest — producer & DJ; audio workshop",
+        url: "https://kidkanevilofficial.com/",
+      },
+      {
+        name: "Jira Duguid",
+        pronouns: "she/her",
+        role: "Guest — artist, Fantasia Malware; artist talk",
+        url: "https://fantasia-malware.net/",
+      },
+      {
+        name: "Niklas Roy",
+        role: "Guest — artist & inventor; studio visit and artist talk",
+        url: "https://www.niklasroy.com/",
+      },
+      {
+        name: "Kati Hyyppä",
+        role: "Guest — artist working in art, technology & participation; studio visit",
+        url: "https://katihyyppa.com/",
+      },
     ],
-  },
+ 
+    // Cohort listing: names, countries, and project titles only.
+    // Their own descriptions and bios are theirs to publish — link out instead.
+    cohort: [
+      { name: "Alexa Barboza Joseph", country: "Costa Rica", project: "Un ladrillito" },
+      { name: "Alicia García Muñoz", country: "Spain", project: "bichos" },
+      { name: "Bertha Elena Artero Ponce", country: "Bolivia", project: "Pulpo-Paint & Jukumari-Collector" },
+      { name: "Didre Schutte (Studio BNBeast)", country: "Netherlands", project: "Pigeon's Superstition" },
+      { name: "Némo Quehen", country: "France", project: "A Small Break" },
+      { name: "Nicholas Markus", country: "United States", project: "Cardboard Calamity" },
+      { name: "Selma Laura Köran", country: "", project: "Behämmert" },
+      { name: "Simón Jaramillo Vallejo", country: "Colombia", project: "Huellas de Carbón 8-Bit" },
+    ],
+ 
+    bio:
+      "Nick Markus is a primary school STEM educator pursuing his master's at NYU Steinhardt (the teaching one, not the Art & Timothée Chalamet one). His work brings practical technology literacy to minoritized populations, helping young people think critically about the technology they use.",
+ 
+    gallery: [
+      {
+        label: "Cabinet build",
+        src: "./assets/projects/cardboard-calamity/photos/cabinet-build.jpg",
+        alt: "Hand holding an unattached cardboard control panel fitted with five servo motors, above the partially built cardboard cabinet body.",
+      },
+      {
+        label: "Dial mechanism detail",
+        src: "./assets/projects/cardboard-calamity/photos/dial-mechanism-detail.jpg",
+        alt: "Close-up of a chrome control handle wired into the cardboard cabinet, with an Arduino Mega and jumper wires visible behind it.",
+      },
+      {
+        label: "Control panel detail",
+        src: "./assets/projects/cardboard-calamity/photos/control-panel-detail.jpg",
+        alt: "Finished cardboard control panel with five servo-driven dial needles, a small OLED screen, a red arcade button, and hand-drawn icons including a skull, heart, and peace sign.",
+      },
+      {
+        label: "Electronics assembly",
+        src: "./assets/projects/cardboard-calamity/photos/electronics-assembly.jpg",
+        alt: "Arduino Mega and breadboard wiring inside the cardboard cabinet, connected to servo motors and the control handle.",
+      },
+      {
+        label: "Berlin exhibition, 31 July 2026",
+        src: "./assets/projects/cardboard-calamity/photos/berlin-exhibition.jpg",
+        alt: "The finished Cardboard Calamity cabinet on display next to its exhibition placard, lit by a teal light bar.",
+      },
+      {
+        label: "Exhibition in action",
+        src: "./assets/projects/cardboard-calamity/photos/exhibition-in-action.jpg",
+        alt: "A visitor turns the control handle on the Cardboard Calamity cabinet during the exhibition, with other attendees visible in the background.",
+      },
+    ],
+
+    videos: [
+      {
+        title: "Cardboard Calamity 4",
+        vimeoId: "1220940919",
+      },
+      {
+        title: "Cardboard Calamity 3",
+        vimeoId: "1220940902",
+      },
+    ],
+  }
+ ,
   {
     id: "game-based-learning",
     title: "Game-Based Skill Building for Students with ADHD",
