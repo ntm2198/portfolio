@@ -1366,6 +1366,9 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
   ctx.fillStyle = "#c09050"; // lighter inner face of the tray
   ctx.beginPath(); ctx.roundRect(bx+2,by+2,bw-4,bh-8,4); ctx.fill();
 
+  ctx.fillStyle = "#865d2d"; // dark cardboard edge color
+  ctx.beginPath(); ctx.roundRect(bx,by+bh/2.8,bw,bh/2.5,3); ctx.fill();
+
   // -- Main angled panel --
   // px/py/pw/ph define the panel face; pr is the corner radius.
   const px=width*0.07, py=height*0.06, pw=width*0.86, ph=height*0.70, pr=7;
@@ -1397,7 +1400,7 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
 
   // OLED screen cutout
   // scX/scY/scW/scH position the screen left-of-center, upper portion of panel.
-  const scX=px+pw*0.26, scY=py+ph*0.14, scW=pw*0.28, scH=ph*0.30;
+  const scX=px+pw*0.35, scY=py+ph*0.14, scW=pw*0.28, scH=ph*0.30;
   ctx.fillStyle="#7a5828"; ctx.fillRect(scX-3,scY-3,scW+6,scH+6); // cardboard surround around screen
   ctx.fillStyle="#060c18"; ctx.fillRect(scX,scY,scW,scH); // black OLED display panel
   // Cycle through short text messages every ~2 seconds (t*0.5 steps, floored to integer index).
@@ -1420,7 +1423,7 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
    *   - Blue rectangular body (the plastic servo casing)
    *   - Two tiny mounting screw holes on the front face
    *   - A grey circular pivot hub above the body
-   *   - A white lever arm rotating from the pivot, with a rounded tip
+   *   - A cardboard arrow rotating from the pivot
    *
    * @param {number} sx       - Center X of the servo body.
    * @param {number} sy       - Center Y of the servo body.
@@ -1431,7 +1434,8 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
     // sbw/sbh: servo body width and height, both derived from u.
     const sbw=u*1.3, sbh=u*0.93;
     // The pivot hub sits above the body: pivY = top of body minus one hub radius.
-    const pivY=sy-sbh/2-u*0.36;
+    const pivY=sy-sbh/2-u*0.05;
+    // const pivY=sy-sbh/2-u*0.18;
     ctx.fillStyle="#1a3899"; // SG90 characteristic deep blue
     ctx.beginPath(); ctx.roundRect(sx-sbw/2,sy-sbh/2,sbw,sbh,3); ctx.fill(); // blue body
     ctx.fillStyle="rgba(80,140,255,0.20)"; // faint highlight shimmer on top face of body
@@ -1444,13 +1448,31 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
     ctx.beginPath(); ctx.arc(sx,pivY,u*0.36,0,Math.PI*2); ctx.fill();
     ctx.strokeStyle="#888"; ctx.lineWidth=u*0.07; ctx.stroke(); // subtle hub outline
     const armLen=u*0.93; // lever arm length in pixels
-    // Arm tip position: pivot center + (armLen in the direction of armAngle).
-    const ax=sx+Math.cos(armAngle)*armLen, ay=pivY+Math.sin(armAngle)*armLen;
-    ctx.strokeStyle="#eeeeee"; ctx.lineWidth=u*0.25; ctx.lineCap="round";
-    ctx.beginPath(); ctx.moveTo(sx,pivY); ctx.lineTo(ax,ay); ctx.stroke(); // white lever arm
-    ctx.lineCap="butt"; // reset to default for subsequent drawing
-    ctx.fillStyle="#cccccc";
-    ctx.beginPath(); ctx.arc(ax,ay,u*0.18,0,Math.PI*2); ctx.fill(); // rounded arm tip
+    // Cardboard arrow rotating from the pivot hub in the direction of armAngle.
+    // ctx.translate + ctx.rotate lets us draw the arrow pointing right in local space,
+    // then the rotation snaps it to the current armAngle automatically.
+    ctx.save();
+    ctx.translate(sx, pivY);
+    ctx.rotate(armAngle);
+    const shaftW  = u * 0.17;  // half-height of the rectangular shaft
+    const headW   = u * 0.40;  // half-width of the triangular arrowhead
+    const headLen = u * 0.30;  // how long the triangle portion is
+    ctx.fillStyle = "#977a4c"; // warm cardboard tan
+    ctx.strokeStyle = "rgba(90,55,10,0.55)"; // darker cut-edge outline
+    ctx.lineWidth = u * 0.07;
+    ctx.lineJoin = "round";
+    ctx.beginPath();
+    ctx.moveTo(0, -shaftW);                      // shaft start, top edge (at pivot)
+    ctx.lineTo(armLen - headLen, -shaftW);        // shaft top, where head begins
+    ctx.lineTo(armLen - headLen, -headW);         // shoulder of arrowhead, top
+    ctx.lineTo(armLen, 0);                        // arrow tip
+    ctx.lineTo(armLen - headLen, headW);          // shoulder of arrowhead, bottom
+    ctx.lineTo(armLen - headLen, shaftW);         // shaft bottom, where head begins
+    ctx.lineTo(0, shaftW);                        // shaft start, bottom edge
+    ctx.closePath();
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
   }
 
   // osc() maps sin to a 0-180 degree sweep with unique phase/rate per servo
@@ -1462,15 +1484,15 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
   // (how quickly it oscillates), so the five servos move independently of each other.
   const osc = (phase, rate) => (Math.sin(t * rate * speed + phase) + 1) * -1 * (Math.PI / 2);
   // Five servo positions: [left-upper, left-lower, center, right-upper, right-lower]
-  drawServo(px+pw*0.11,py+ph*0.32, osc(0.0, 0.55));
-  drawServo(px+pw*0.11,py+ph*0.70, osc(1.8, 0.70));
-  drawServo(px+pw*0.50,py+ph*0.66, osc(3.2, 0.90));
-  drawServo(px+pw*0.75,py+ph*0.28, osc(0.9, 0.65));
-  drawServo(px+pw*0.75,py+ph*0.66, osc(2.5, 0.80));
+  drawServo(px+pw*0.16,py+ph*0.32, osc(0.0, 0.55));
+  drawServo(px+pw*0.27,py+ph*0.65, osc(1.8, 0.70));
+  drawServo(px+pw*0.50,py+ph*0.90, osc(3.2, 0.90));
+  drawServo(px+pw*0.75,py+ph*0.60, osc(0.9, 0.65));
+  drawServo(px+pw*0.85,py+ph*0.32, osc(2.5, 0.80));
 
   // Red arcade dome button
   // btnR is proportional to the smaller panel dimension (not u) to keep it circular.
-  const btnX=px+pw*0.91, btnY=py+ph*0.48, btnR=Math.min(pw,ph)*0.075;
+  const btnX=px+pw*0.81, btnY=py+ph*0.81, btnR=Math.min(pw,ph)*0.075;
   ctx.fillStyle="#444"; // dark mounting ring behind the button
   ctx.beginPath(); ctx.arc(btnX,btnY,btnR+4,0,Math.PI*2); ctx.fill();
   ctx.fillStyle="#cc1111"; // red dome body
@@ -1591,12 +1613,66 @@ function drawCardboard(ctx, width, height, theme, time, hover) {
     ctx.beginPath(); ctx.arc(dx,dy+s*0.38,s*0.22,0,Math.PI*2); ctx.fill(); // exclamation dot
   }
 
-  // Place each doodle at a different spot on the panel face.
-  drawSkull(px+pw*0.21,  py+ph*0.50, u*0.50);
-  drawHeart(px+pw*0.62,  py+ph*0.20, u*0.36);
-  drawPeace(px+pw*0.21,  py+ph*0.80, u*0.43);
-  drawSmiley(px+pw*0.60, py+ph*0.84, u*0.43);
-  drawWarning(px+pw*0.38,py+ph*0.80, u*0.36);
+  // 5 new doodle helpers -- same marker-sketch style as the originals above
+  function drawHeartbreak(dx,dy,s) {
+    // Same heart outline as drawHeart, plus a lightning-bolt crack down the center
+    ctx.beginPath(); ctx.moveTo(dx,dy+s*0.8);
+    ctx.bezierCurveTo(dx-s*1.1,dy-s*0.4,dx-s*1.1,dy-s,dx,dy-s*0.2);
+    ctx.bezierCurveTo(dx+s*1.1,dy-s,dx+s*1.1,dy-s*0.4,dx,dy+s*0.8);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(dx,dy-s*0.25); ctx.lineTo(dx+s*0.20,dy+s*0.12);
+    ctx.lineTo(dx-s*0.10,dy+s*0.32); ctx.lineTo(dx+s*0.15,dy+s*0.65);
+    ctx.stroke();
+  }
+  function drawFrowney(dx,dy,s) {
+    // Circle face + filled eye dots + anticlockwise arc = frown (top half of inner circle)
+    ctx.beginPath(); ctx.arc(dx,dy,s,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.arc(dx,dy+s*0.44,s*0.44,Math.PI-0.2,0.2,false); ctx.stroke();
+    ctx.beginPath(); ctx.arc(dx-s*0.34,dy-s*0.25,s*0.22,0,Math.PI*2); ctx.fill();
+    ctx.beginPath(); ctx.arc(dx+s*0.34,dy-s*0.25,s*0.22,0,Math.PI*2); ctx.fill();
+  }
+  function drawBomb(dx,dy,s) {
+    // Round body + short diagonal fuse line + filled spark dot at tip
+    ctx.beginPath(); ctx.arc(dx,dy+s*0.10,s*0.82,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(dx,dy-s*0.70); ctx.lineTo(dx+s*0.22,dy-s*1.12); ctx.stroke();
+    ctx.beginPath(); ctx.arc(dx+s*0.24,dy-s*1.18,s*0.16,0,Math.PI*2); ctx.fill();
+  }
+  function drawCheckMark(dx,dy,s) {
+    // Three-point tick: lower-left -> bottom knee -> upper-right (2:1 stroke lengths)
+    ctx.beginPath();
+    ctx.moveTo(dx-s*0.62,dy+s*0.12);
+    ctx.lineTo(dx-s*0.14,dy+s*0.58);
+    ctx.lineTo(dx+s*0.68,dy-s*0.52);
+    ctx.stroke();
+  }
+  function drawLeaf(dx,dy,s) {
+    // Two mirrored bezier curves creating a pointed oval leaf + center vein
+    ctx.beginPath();
+    ctx.moveTo(dx,dy-s);
+    ctx.bezierCurveTo(dx+s*1.1,dy-s*0.2,dx+s*1.1,dy+s*0.6,dx,dy+s);
+    ctx.bezierCurveTo(dx-s*1.1,dy+s*0.6,dx-s*1.1,dy-s*0.2,dx,dy-s);
+    ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(dx,dy-s*0.85); ctx.lineTo(dx,dy+s*0.85); ctx.stroke();
+  }
+
+  // Doodle placement -- 5 pairs arranged counter-clockwise around the servo cluster.
+  // Pair 1: heartbreak + heart    (upper strip, flanking UR servo)
+  //  drawServo(px+pw*0.85,py+ph*0.32, osc(2.5, 0.80));
+  drawHeartbreak(px+pw*0.72, py+ph*0.32, u*0.36);
+  drawHeart(     px+pw*0.94, py+ph*0.32, u*0.36);
+  // Pair 2: frowney + smiley      (lower-right, flanking RM servo)
+  drawSmiley(    px+pw*0.62, py+ph*0.62, u*0.40);
+  drawFrowney(   px+pw*0.84, py+ph*0.62, u*0.40);
+  // Pair 3: bomb + peace          (lower-center, flanking C servo)
+  drawPeace(     px+pw*0.63, py+ph*0.82, u*0.40);
+  drawBomb(      px+pw*0.41, py+ph*0.82, u*0.36);
+  // Pair 4: skull + leaf          (left side, flanking LL servo)
+  drawSkull(     px+pw*0.17, py+ph*0.64, u*0.46);
+  drawLeaf(      px+pw*0.36, py+ph*0.64, u*0.38);
+  // Pair 5: warning + check mark  (upper-left, flanking UL servo)
+  drawWarning(   px+pw*0.08, py+ph*0.25, u*0.36);
+  drawCheckMark( px+pw*0.28, py+ph*0.25, u*0.38);
 
   // Dashed annotation arrows -- mimic the hand-drawn callout lines on the real controller
   // that point toward the servos, as if someone labelled them with a marker.
