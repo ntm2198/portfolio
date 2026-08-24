@@ -14,7 +14,7 @@ window.portfolioProjects = [
     overview:
       "An arcade cabinet from an alternate timeline where all essential infrastructure is made of cardboard. Slide the control handle to keep the dials in the safe zone, and see how long you can hold it together. Built and exhibited during a four-week alt-control games residency in Berlin.",
     goal:
-      "Explore how physical, handcrafted interfaces change the feel of digital play — and how a game's mechanics can carry an argument that its text refuses to make out loud.",
+      "Explore how physical, handcrafted interfaces change the feel of digital play - and how a game's mechanics can carry an argument that its text refuses to make out loud.",
     impact:
       "Exhibited 31 July 2026 in the closing public showcase of the Summer 2026 cohort at School of Machines, Making & Make-Believe in Berlin, alongside seven other artists from eight countries. Ongoing development toward documentation others can build from.",
     tech: [
@@ -27,7 +27,7 @@ window.portfolioProjects = [
     visual: "cardboard",
     url: "./projects/cardboard-calamity.html",
     snapshot: {
-      label: "Summer 2026 — Berlin",
+      label: "Summer 2026 - Berlin",
       image: "./assets/projects/cardboard-calamity/photos/cover-exhibition.jpg",
       imagePosition: "center",
       audience: "Public exhibition / Playtesters",
@@ -38,39 +38,39 @@ window.portfolioProjects = [
  
     storyTitle: "What happens when the controller is the craft project?",
     storyIntro:
-      "Cardboard Calamity started as a summer experiment in DIY game hardware — build the physical interface from scratch, then design a game that only makes sense through that interface. It ended up being about how it feels when the thing you're managing keeps speeding up and nobody will admit it.",
+      "Cardboard Calamity started as a summer experiment in DIY game hardware - build the physical interface from scratch, then design a game that only makes sense through that interface. It ended up being about how it feels when the thing you're managing keeps speeding up and nobody will admit it.",
  
     panels: [
       {
         title: "The concept",
         body:
-          "An alt-control game played entirely through a handbuilt cardboard arcade cabinet — a sliding control handle, physical dials, and switches assembled from salvaged materials and an Arduino. Keep the dials in the safe zone. The dials are absolutely not gradually speeding up to make the demands of the game harder to meet. You just aren't trying hard enough. :) The physical act of making the controller is part of the argument.",
+          "An alt-control game played entirely through a handbuilt cardboard arcade cabinet - a sliding control handle, physical dials, and switches assembled from salvaged materials and an Arduino. Keep the dials in the safe zone. The dials gradually speed up to making demands of the game harder to meet. The physical act of moving the controller was an intentional part of the design.",
       },
       {
         title: "How it works",
         body:
-          "An Arduino Mega drives the cabinet over a shared I2C bus: a PCA9685 servo driver moves the physical dial needles, debounced switches read player input, and a small OLED handles on-screen feedback. Servo power runs on its own supply so the display doesn't brown out when every needle swings at once. Non-blocking servo control and a dirty-flag render loop keep the whole thing responsive on modest hardware. The finished cabinet is fully self-contained — at the exhibition it needed exactly one wall outlet and nothing else.",
+          "An Arduino Mega drives the cabinet over a shared I2C bus: a PCA9685 servo driver moves the physical dial needles, debounced switches read player input, and a small OLED handles on-screen feedback. Servo power runs on its own supply so the display doesn't brown out when every needle swings at once. Non-blocking servo control and a dirty-flag render loop keep the whole thing responsive on modest hardware. The finished cabinet is fully self-contained, no extra equipment needed.",
       },
       {
         title: "How it got here",
         body:
-          "The pitch I walked in with was a different game: a train-tracks piece about the illusion of choice, played through a modified rubber stamp — you think you're deciding, but you aren't, and over-optimizing isn't worth it. The servos and the Arduino Mega survived the rewrite; so did the thesis. Cardboard Calamity says the same thing with a straighter face.",
+          "The pitch I walked in with was a different game: a social sim in the style of Persona commenting on the limitations of personal choice, played through a modified rubber stamp - you think you're deciding, but you aren't, and over-optimizing isn't worth it. The servos and the Arduino Mega survived the rewrite; so did the thesis. Cardboard Calamity says the same thing with a straighter face.",
       },
       {
         title: "Where it was made",
         body:
-          "Built during 'Creating Alt-Ctrl Games as Feminist Art Practice,' a four-week full-time program (6–31 July 2026) at School of Machines, Making & Make-Believe in Berlin-Mitte. The program frames game-making as a way to examine the systems of power it wants to expose — asking whether the political landscape of games changes when you change who gets to build them. Four weeks running from play and paper prototyping, through bitsy and Godot, Krita for visual assets, Audacity for sound, and Dialogic for non-linear writing, into electronics, materials, and a public exhibition on the final evening. Participants are invited to stay on for a one-month residency at Make-Believe Studio on the fifth floor of ACUD.",
+          "Built during 'Creating Alt-Ctrl Games as Feminist Art Practice,' a four-week full-time program (6–31 July 2026) at School of Machines, Making & Make-Believe in Berlin-Mitte. The program frames game-making as a way to examine the systems of power it wants to expose - asking whether the political landscape of games changes when you change who gets to build them. Four weeks running from play and paper prototyping, through bitsy and Godot, Krita for visual assets, Audacity for sound, and Dialogic for non-linear writing, into electronics, materials, and a public exhibition on the final evening. Participants are invited to stay on for a one-month residency at Make-Believe Studio on the fifth floor of ACUD.",
       },
       {
         title: "About the school",
         body:
-          "School of Machines, Making & Make-Believe is an independent school founded in Berlin in 2014 by artist and educator Rachel Uwa, working at the intersection of art, technology, design, and human connection. It runs small, intensive, hands-on programs taught by practicing artists and technologists, each ending in a public exhibition of student work. The school deliberately treats prior experience as optional and keeps classes small, with solidarity tickets and scholarships aimed at women, BIPOC, LGBTQIA+, and other communities under-represented in art and tech. Every program is one-of-a-kind — topics, instructors, duration, and even the host country shift year to year.",
+          "School of Machines, Making & Make-Believe is an independent school founded in Berlin in 2014 by artist and educator Rachel Uwa, working at the intersection of art, technology, design, and human connection. It runs small, intensive, hands-on programs taught by practicing artists and technologists, each ending in a public exhibition of student work. The school deliberately treats prior experience as optional and keeps classes small, with solidarity tickets and scholarships aimed at women, BIPOC, LGBTQIA+, and other communities under-represented in art and tech. Every program is one-of-a-kind - topics, instructors, duration, and even the host country shift year to year.",
       },
       {
-        title: "What I'm figuring out",
+        title: "Core Design Questions",
         items: [
           "How physical affordances shape player intuition and game feel.",
-          "What mechanics are uniquely suited to dial and handle input — things a gamepad can't ask of you.",
+          "What mechanics are uniquely suited to dial and handle input - things a gamepad can't ask of you.",
           "How escalating difficulty reads as a systems critique rather than a difficulty curve.",
           "How to document a DIY build so others can recreate it from salvaged parts.",
         ],
@@ -98,7 +98,8 @@ window.portfolioProjects = [
     people: [
       {
         name: "lislis",
-        role: "Lead instructor — creative technologist, activist, artist",
+        pronouns: "they/them",
+        role: "Lead instructor - creative technologist, activist, artist",
         url: "http://lislis.xyz",
       },
       {
@@ -110,39 +111,43 @@ window.portfolioProjects = [
       {
         name: "Chloé Desmoineaux",
         pronouns: "they/them",
-        role: "Guest — Alt+Ctrl artist & game curator; alt.ctrl and queer game theory workshop",
+        role: "Guest - Alt+Ctrl artist & game curator; alt.ctrl and queer game theory workshop",
         url: "https://chloedesmoineaux.surf/",
       },
       {
         name: "Lorenzo Pilia",
-        role: "Guest — curator & event producer, Talk & Play / Saftladen",
+        pronouns: "he/him",
+        role: "Guest - curator & event producer, Talk & Play / Saftladen",
         url: "https://lorenzo.pilia.it/",
       },
       {
         name: "Gerard Roberts (kidkanevil)",
-        role: "Guest — producer & DJ; audio workshop",
+        pronouns: "he/him",
+        role: "Guest - producer & DJ; audio workshop",
         url: "https://kidkanevilofficial.com/",
       },
       {
         name: "Jira Duguid",
         pronouns: "she/her",
-        role: "Guest — artist, Fantasia Malware; artist talk",
+        role: "Guest - artist, Fantasia Malware; artist talk",
         url: "https://fantasia-malware.net/",
       },
       {
         name: "Niklas Roy",
-        role: "Guest — artist & inventor; studio visit and artist talk",
+        pronouns: "he/him",
+        role: "Guest - artist & inventor; studio visit and artist talk",
         url: "https://www.niklasroy.com/",
       },
       {
         name: "Kati Hyyppä",
-        role: "Guest — artist working in art, technology & participation; studio visit",
+        pronouns: "she/her",
+        role: "Guest - artist working in art, technology & participation; studio visit",
         url: "https://katihyyppa.com/",
       },
     ],
  
     // Cohort listing: names, countries, and project titles only.
-    // Their own descriptions and bios are theirs to publish — link out instead.
+    // Their own descriptions and bios are theirs to publish - link out instead.
     cohort: [
       { name: "Alexa Barboza Joseph", country: "Costa Rica", project: "Un ladrillito" },
       { name: "Alicia García Muñoz", country: "Spain", project: "bichos" },
@@ -150,7 +155,7 @@ window.portfolioProjects = [
       { name: "Didre Schutte (Studio BNBeast)", country: "Netherlands", project: "Pigeon's Superstition" },
       { name: "Némo Quehen", country: "France", project: "A Small Break" },
       { name: "Nicholas Markus", country: "United States", project: "Cardboard Calamity" },
-      { name: "Selma Laura Köran", country: "", project: "Behämmert" },
+      { name: "Selma Laura Köran", country: "Germany", project: "Behämmert" },
       { name: "Simón Jaramillo Vallejo", country: "Colombia", project: "Huellas de Carbón 8-Bit" },
     ],
  
@@ -192,11 +197,11 @@ window.portfolioProjects = [
 
     videos: [
       {
-        title: "Cardboard Calamity 4",
+        title: "Cardboard Calamity In Action",
         vimeoId: "1220940919",
       },
       {
-        title: "Cardboard Calamity 3",
+        title: "Cardboard Calamity In Action",
         vimeoId: "1220940902",
       },
     ],
@@ -232,7 +237,7 @@ window.portfolioProjects = [
       {
         title: "What this was",
         body:
-          "Road Ready Rally is an inclusive, tangible educational board game built to support executive functioning and materials organization skills for neurodiverse middle school students. Grounded in Zimmerman's Self-Regulated Learning Model and Flow Theory, the gameplay balances sensory regulation with targeted cognitive challenges to maintain an optimal instructional state. The platform features a highly adaptive architecture — K-12 STEM educators can substitute customized academic review decks tied directly to their curriculum. The result is a cooperative learning experience that makes executive functioning strategies visible, tangible, and low-pressure.",
+          "Road Ready Rally is an inclusive, tangible educational board game built to support executive functioning and materials organization skills for neurodiverse middle school students. Grounded in Zimmerman's Self-Regulated Learning Model and Flow Theory, the gameplay balances sensory regulation with targeted cognitive challenges to maintain an optimal instructional state. The platform features a highly adaptive architecture - K-12 STEM educators can substitute customized academic review decks tied directly to their curriculum. The result is a cooperative learning experience that makes executive functioning strategies visible, tangible, and low-pressure.",
       },
       {
         title: "Learning goals",
@@ -362,7 +367,7 @@ window.portfolioProjects = [
       {
         title: "Learning goals",
         items: [
-          "Master foundational coding logic—including conditionals, loops, variables, and events—across software and hardware environments.",
+          "Master foundational coding logic-including conditionals, loops, variables, and events-across software and hardware environments.",
           "Apply iterative engineering design principles to safely construct, wire, and modify physical robotics modules.",
           "Understand and actively practice digital citizenship protocols while collaboratively sharing a high-resource makerspace ecosystem.",
         ],
@@ -422,7 +427,7 @@ window.portfolioProjects = [
       {
         title: "What this was",
         body:
-          "A high-momentum educational accelerator consisting of nine unique weekly modules. The curriculum challenge lay in translating industrial creative tools—such as slicing software parameters for additive manufacturing and mechanical gear-ratio logic—into clear, age-appropriate conceptual milestones.",
+          "A high-momentum educational accelerator consisting of nine unique weekly modules. The curriculum challenge lay in translating industrial creative tools-such as slicing software parameters for additive manufacturing and mechanical gear-ratio logic-into clear, age-appropriate conceptual milestones.",
       },
       {
         title: "Learning goals",
