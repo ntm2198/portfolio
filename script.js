@@ -134,8 +134,16 @@ const workplaces = [
   },
   {
     name: "Coco Academy",
-    logo: "./assets/logos-or-icons/workplaces/coco-academy-logo.webp",
+    logo: "./assets/logos-or-icons/workplaces/coco.jpg",
     note: "Student-centered technology learning with an emphasis on confidence and playful practice.",
+  },
+  {name: "Coney Island Maker Faire",
+    logo: "./assets/logos-or-icons/workplaces/Coney_island_maker_faire.jpg",
+    note: "Community event showcasing student projects, interactive exhibits, and hands-on maker activities.",
+  },
+  {name: "School of Machines, Making, and Make-Believe",
+    logo: "./assets/logos-or-icons/workplaces/schoolOfMachines.webp",
+    note: "Creative residency focused on DIY technology and creative expression.",
   },
   {
     name: "Free Library of Philadelphia",
